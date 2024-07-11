@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "./friends-proto";
+
+//Service for friends
+service FriendsServise {
+  //Add friends method
+  rpc SetFriends (SetFriendsRequest) returns (SetFriendsResponse){};
+}
+
+// Data for add peer_1 and peer_2
+message SetFriendsRequest {
+  // Peer_1 id
+  string peer_1 = 1;
+  // Peer_2 id
+  string peer_2 = 2;
+}
+
+//Response add friend
+message SetFriendsResponse {
+  //Result of the operation
+  bool success = 1;
+}
