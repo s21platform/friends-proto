@@ -4,8 +4,8 @@
 ## Table of Contents
 
 - [friends.proto](#friends-proto)
-    - [SetFriendsRequest](#-SetFriendsRequest)
-    - [SetFriendsResponse](#-SetFriendsResponse)
+    - [SetFriendsIn](#-SetFriendsIn)
+    - [SetFriendsOut](#-SetFriendsOut)
   
     - [FriendsServise](#-FriendsServise)
   
@@ -20,9 +20,9 @@
 
 
 
-<a name="-SetFriendsRequest"></a>
+<a name="-SetFriendsIn"></a>
 
-### SetFriendsRequest
+### SetFriendsIn
 Data for add peer_1 and peer_2
 
 
@@ -36,9 +36,9 @@ Data for add peer_1 and peer_2
 
 
 
-<a name="-SetFriendsResponse"></a>
+<a name="-SetFriendsOut"></a>
 
-### SetFriendsResponse
+### SetFriendsOut
 Response add friend
 
 
@@ -64,7 +64,7 @@ Service for friends
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| SetFriends | [.SetFriendsRequest](#SetFriendsRequest) | [.SetFriendsResponse](#SetFriendsResponse) | Add friends method |
+| SetFriends | [.SetFriendsIn](#SetFriendsIn) | [.SetFriendsOut](#SetFriendsOut) | Add friends method |
 
  
 
@@ -90,4 +90,3 @@ Service for friends
 | <a name="string" /> string | A string must always contain UTF-8 encoded or 7-bit ASCII text. | string | String | str/unicode | string | string | string | String (UTF-8) |
 | <a name="bytes" /> bytes | May contain any arbitrary sequence of bytes. | string | ByteString | str | []byte | ByteString | string | String (ASCII-8BIT) |
 
-# friends-proto
