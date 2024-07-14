@@ -127,6 +127,251 @@ func (x *SetFriendsOut) GetSuccess() bool {
 	return false
 }
 
+// Data for peer
+type Peer struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Peer uuid
+	Uuid string `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+}
+
+func (x *Peer) Reset() {
+	*x = Peer{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_friends_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Peer) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Peer) ProtoMessage() {}
+
+func (x *Peer) ProtoReflect() protoreflect.Message {
+	mi := &file_friends_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Peer.ProtoReflect.Descriptor instead.
+func (*Peer) Descriptor() ([]byte, []int) {
+	return file_friends_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *Peer) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
+// Response subscription
+type SubscriptionOut struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Result of the operation
+	Subscription []*Peer `protobuf:"bytes,1,rep,name=subscription,proto3" json:"subscription,omitempty"`
+}
+
+func (x *SubscriptionOut) Reset() {
+	*x = SubscriptionOut{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_friends_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SubscriptionOut) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubscriptionOut) ProtoMessage() {}
+
+func (x *SubscriptionOut) ProtoReflect() protoreflect.Message {
+	mi := &file_friends_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubscriptionOut.ProtoReflect.Descriptor instead.
+func (*SubscriptionOut) Descriptor() ([]byte, []int) {
+	return file_friends_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *SubscriptionOut) GetSubscription() []*Peer {
+	if x != nil {
+		return x.Subscription
+	}
+	return nil
+}
+
+// Response subscribers
+type SubscribersOut struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Result of the operation
+	Subscribers []*Peer `protobuf:"bytes,1,rep,name=subscribers,proto3" json:"subscribers,omitempty"`
+}
+
+func (x *SubscribersOut) Reset() {
+	*x = SubscribersOut{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_friends_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SubscribersOut) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubscribersOut) ProtoMessage() {}
+
+func (x *SubscribersOut) ProtoReflect() protoreflect.Message {
+	mi := &file_friends_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubscribersOut.ProtoReflect.Descriptor instead.
+func (*SubscribersOut) Descriptor() ([]byte, []int) {
+	return file_friends_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *SubscribersOut) GetSubscribers() []*Peer {
+	if x != nil {
+		return x.Subscribers
+	}
+	return nil
+}
+
+// Request for subscription
+type GetSubscriptionIn struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Peer uuid
+	Uuid string `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+}
+
+func (x *GetSubscriptionIn) Reset() {
+	*x = GetSubscriptionIn{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_friends_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetSubscriptionIn) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSubscriptionIn) ProtoMessage() {}
+
+func (x *GetSubscriptionIn) ProtoReflect() protoreflect.Message {
+	mi := &file_friends_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSubscriptionIn.ProtoReflect.Descriptor instead.
+func (*GetSubscriptionIn) Descriptor() ([]byte, []int) {
+	return file_friends_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetSubscriptionIn) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
+// Request for subscribers
+type GetSubscribersIn struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Peer uuid
+	Uuid string `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+}
+
+func (x *GetSubscribersIn) Reset() {
+	*x = GetSubscribersIn{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_friends_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetSubscribersIn) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSubscribersIn) ProtoMessage() {}
+
+func (x *GetSubscribersIn) ProtoReflect() protoreflect.Message {
+	mi := &file_friends_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSubscribersIn.ProtoReflect.Descriptor instead.
+func (*GetSubscribersIn) Descriptor() ([]byte, []int) {
+	return file_friends_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetSubscribersIn) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 var File_friends_proto protoreflect.FileDescriptor
 
 var file_friends_proto_rawDesc = []byte{
@@ -137,13 +382,34 @@ var file_friends_proto_rawDesc = []byte{
 	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x70, 0x65, 0x65, 0x72, 0x32, 0x22, 0x29, 0x0a,
 	0x0d, 0x53, 0x65, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x4f, 0x75, 0x74, 0x12, 0x18,
 	0x0a, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
-	0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x32, 0x3f, 0x0a, 0x0e, 0x46, 0x72, 0x69, 0x65,
-	0x6e, 0x64, 0x73, 0x53, 0x65, 0x72, 0x76, 0x69, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x53, 0x65,
-	0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x12, 0x0d, 0x2e, 0x53, 0x65, 0x74, 0x46, 0x72,
-	0x69, 0x65, 0x6e, 0x64, 0x73, 0x49, 0x6e, 0x1a, 0x0e, 0x2e, 0x53, 0x65, 0x74, 0x46, 0x72, 0x69,
-	0x65, 0x6e, 0x64, 0x73, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x42, 0x11, 0x5a, 0x0f, 0x2e, 0x2f, 0x66,
-	0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x22, 0x1a, 0x0a, 0x04, 0x50, 0x65, 0x65, 0x72,
+	0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
+	0x75, 0x75, 0x69, 0x64, 0x22, 0x3c, 0x0a, 0x0f, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x75, 0x74, 0x12, 0x29, 0x0a, 0x0c, 0x73, 0x75, 0x62, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e,
+	0x50, 0x65, 0x65, 0x72, 0x52, 0x0c, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x22, 0x39, 0x0a, 0x0e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72,
+	0x73, 0x4f, 0x75, 0x74, 0x12, 0x27, 0x0a, 0x0b, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62,
+	0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x50, 0x65, 0x65, 0x72,
+	0x52, 0x0b, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x22, 0x27, 0x0a,
+	0x11, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
+	0x49, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22, 0x26, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x32, 0xb2,
+	0x01, 0x0a, 0x0e, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x53, 0x65, 0x72, 0x76, 0x69, 0x73,
+	0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x53, 0x65, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x12,
+	0x0d, 0x2e, 0x53, 0x65, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x49, 0x6e, 0x1a, 0x0e,
+	0x2e, 0x53, 0x65, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x4f, 0x75, 0x74, 0x22, 0x00,
+	0x12, 0x39, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x12, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x1a, 0x10, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x12, 0x36, 0x0a, 0x0e, 0x47,
+	0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x12, 0x11, 0x2e,
+	0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x49, 0x6e,
+	0x1a, 0x0f, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x4f, 0x75,
+	0x74, 0x22, 0x00, 0x42, 0x11, 0x5a, 0x0f, 0x2e, 0x2f, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73,
+	0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -158,19 +424,30 @@ func file_friends_proto_rawDescGZIP() []byte {
 	return file_friends_proto_rawDescData
 }
 
-var file_friends_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_friends_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_friends_proto_goTypes = []interface{}{
-	(*SetFriendsIn)(nil),  // 0: SetFriendsIn
-	(*SetFriendsOut)(nil), // 1: SetFriendsOut
+	(*SetFriendsIn)(nil),      // 0: SetFriendsIn
+	(*SetFriendsOut)(nil),     // 1: SetFriendsOut
+	(*Peer)(nil),              // 2: Peer
+	(*SubscriptionOut)(nil),   // 3: SubscriptionOut
+	(*SubscribersOut)(nil),    // 4: SubscribersOut
+	(*GetSubscriptionIn)(nil), // 5: GetSubscriptionIn
+	(*GetSubscribersIn)(nil),  // 6: GetSubscribersIn
 }
 var file_friends_proto_depIdxs = []int32{
-	0, // 0: FriendsServise.SetFriends:input_type -> SetFriendsIn
-	1, // 1: FriendsServise.SetFriends:output_type -> SetFriendsOut
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	2, // 0: SubscriptionOut.subscription:type_name -> Peer
+	2, // 1: SubscribersOut.subscribers:type_name -> Peer
+	0, // 2: FriendsServise.SetFriends:input_type -> SetFriendsIn
+	5, // 3: FriendsServise.GetSubscription:input_type -> GetSubscriptionIn
+	6, // 4: FriendsServise.GetSubscribers:input_type -> GetSubscribersIn
+	1, // 5: FriendsServise.SetFriends:output_type -> SetFriendsOut
+	3, // 6: FriendsServise.GetSubscription:output_type -> SubscriptionOut
+	4, // 7: FriendsServise.GetSubscribers:output_type -> SubscribersOut
+	5, // [5:8] is the sub-list for method output_type
+	2, // [2:5] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_friends_proto_init() }
@@ -203,6 +480,66 @@ func file_friends_proto_init() {
 				return nil
 			}
 		}
+		file_friends_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Peer); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_friends_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SubscriptionOut); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_friends_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SubscribersOut); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_friends_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetSubscriptionIn); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_friends_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetSubscribersIn); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -210,7 +547,7 @@ func file_friends_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_friends_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

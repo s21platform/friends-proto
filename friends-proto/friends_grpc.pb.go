@@ -24,6 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 type FriendsServiseClient interface {
 	// Add friends method
 	SetFriends(ctx context.Context, in *SetFriendsIn, opts ...grpc.CallOption) (*SetFriendsOut, error)
+	GetSubscription(ctx context.Context, in *GetSubscriptionIn, opts ...grpc.CallOption) (*SubscriptionOut, error)
+	GetSubscribers(ctx context.Context, in *GetSubscribersIn, opts ...grpc.CallOption) (*SubscribersOut, error)
 }
 
 type friendsServiseClient struct {
@@ -43,12 +45,32 @@ func (c *friendsServiseClient) SetFriends(ctx context.Context, in *SetFriendsIn,
 	return out, nil
 }
 
+func (c *friendsServiseClient) GetSubscription(ctx context.Context, in *GetSubscriptionIn, opts ...grpc.CallOption) (*SubscriptionOut, error) {
+	out := new(SubscriptionOut)
+	err := c.cc.Invoke(ctx, "/FriendsServise/GetSubscription", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *friendsServiseClient) GetSubscribers(ctx context.Context, in *GetSubscribersIn, opts ...grpc.CallOption) (*SubscribersOut, error) {
+	out := new(SubscribersOut)
+	err := c.cc.Invoke(ctx, "/FriendsServise/GetSubscribers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FriendsServiseServer is the server API for FriendsServise service.
 // All implementations must embed UnimplementedFriendsServiseServer
 // for forward compatibility
 type FriendsServiseServer interface {
 	// Add friends method
 	SetFriends(context.Context, *SetFriendsIn) (*SetFriendsOut, error)
+	GetSubscription(context.Context, *GetSubscriptionIn) (*SubscriptionOut, error)
+	GetSubscribers(context.Context, *GetSubscribersIn) (*SubscribersOut, error)
 	mustEmbedUnimplementedFriendsServiseServer()
 }
 
@@ -58,6 +80,12 @@ type UnimplementedFriendsServiseServer struct {
 
 func (UnimplementedFriendsServiseServer) SetFriends(context.Context, *SetFriendsIn) (*SetFriendsOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetFriends not implemented")
+}
+func (UnimplementedFriendsServiseServer) GetSubscription(context.Context, *GetSubscriptionIn) (*SubscriptionOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSubscription not implemented")
+}
+func (UnimplementedFriendsServiseServer) GetSubscribers(context.Context, *GetSubscribersIn) (*SubscribersOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSubscribers not implemented")
 }
 func (UnimplementedFriendsServiseServer) mustEmbedUnimplementedFriendsServiseServer() {}
 
@@ -90,6 +118,42 @@ func _FriendsServise_SetFriends_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FriendsServise_GetSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSubscriptionIn)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FriendsServiseServer).GetSubscription(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/FriendsServise/GetSubscription",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FriendsServiseServer).GetSubscription(ctx, req.(*GetSubscriptionIn))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FriendsServise_GetSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSubscribersIn)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FriendsServiseServer).GetSubscribers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/FriendsServise/GetSubscribers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FriendsServiseServer).GetSubscribers(ctx, req.(*GetSubscribersIn))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // FriendsServise_ServiceDesc is the grpc.ServiceDesc for FriendsServise service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -100,6 +164,14 @@ var FriendsServise_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetFriends",
 			Handler:    _FriendsServise_SetFriends_Handler,
+		},
+		{
+			MethodName: "GetSubscription",
+			Handler:    _FriendsServise_GetSubscription_Handler,
+		},
+		{
+			MethodName: "GetSubscribers",
+			Handler:    _FriendsServise_GetSubscribers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
