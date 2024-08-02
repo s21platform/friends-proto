@@ -24,8 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 type FriendsServiseClient interface {
 	// Add friends method
 	SetFriends(ctx context.Context, in *SetFriendsIn, opts ...grpc.CallOption) (*SetFriendsOut, error)
-	GetSubscription(ctx context.Context, in *GetSubscriptionIn, opts ...grpc.CallOption) (*SubscriptionOut, error)
-	GetSubscribers(ctx context.Context, in *GetSubscribersIn, opts ...grpc.CallOption) (*SubscribersOut, error)
+	GetSubscription(ctx context.Context, in *GetSubscriptionIn, opts ...grpc.CallOption) (*GetSubscriptionOut, error)
+	GetSubscribers(ctx context.Context, in *GetSubscribersIn, opts ...grpc.CallOption) (*GetSubscribersOut, error)
 }
 
 type friendsServiseClient struct {
@@ -45,8 +45,8 @@ func (c *friendsServiseClient) SetFriends(ctx context.Context, in *SetFriendsIn,
 	return out, nil
 }
 
-func (c *friendsServiseClient) GetSubscription(ctx context.Context, in *GetSubscriptionIn, opts ...grpc.CallOption) (*SubscriptionOut, error) {
-	out := new(SubscriptionOut)
+func (c *friendsServiseClient) GetSubscription(ctx context.Context, in *GetSubscriptionIn, opts ...grpc.CallOption) (*GetSubscriptionOut, error) {
+	out := new(GetSubscriptionOut)
 	err := c.cc.Invoke(ctx, "/FriendsServise/GetSubscription", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -54,8 +54,8 @@ func (c *friendsServiseClient) GetSubscription(ctx context.Context, in *GetSubsc
 	return out, nil
 }
 
-func (c *friendsServiseClient) GetSubscribers(ctx context.Context, in *GetSubscribersIn, opts ...grpc.CallOption) (*SubscribersOut, error) {
-	out := new(SubscribersOut)
+func (c *friendsServiseClient) GetSubscribers(ctx context.Context, in *GetSubscribersIn, opts ...grpc.CallOption) (*GetSubscribersOut, error) {
+	out := new(GetSubscribersOut)
 	err := c.cc.Invoke(ctx, "/FriendsServise/GetSubscribers", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -69,8 +69,8 @@ func (c *friendsServiseClient) GetSubscribers(ctx context.Context, in *GetSubscr
 type FriendsServiseServer interface {
 	// Add friends method
 	SetFriends(context.Context, *SetFriendsIn) (*SetFriendsOut, error)
-	GetSubscription(context.Context, *GetSubscriptionIn) (*SubscriptionOut, error)
-	GetSubscribers(context.Context, *GetSubscribersIn) (*SubscribersOut, error)
+	GetSubscription(context.Context, *GetSubscriptionIn) (*GetSubscriptionOut, error)
+	GetSubscribers(context.Context, *GetSubscribersIn) (*GetSubscribersOut, error)
 	mustEmbedUnimplementedFriendsServiseServer()
 }
 
@@ -81,10 +81,10 @@ type UnimplementedFriendsServiseServer struct {
 func (UnimplementedFriendsServiseServer) SetFriends(context.Context, *SetFriendsIn) (*SetFriendsOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetFriends not implemented")
 }
-func (UnimplementedFriendsServiseServer) GetSubscription(context.Context, *GetSubscriptionIn) (*SubscriptionOut, error) {
+func (UnimplementedFriendsServiseServer) GetSubscription(context.Context, *GetSubscriptionIn) (*GetSubscriptionOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscription not implemented")
 }
-func (UnimplementedFriendsServiseServer) GetSubscribers(context.Context, *GetSubscribersIn) (*SubscribersOut, error) {
+func (UnimplementedFriendsServiseServer) GetSubscribers(context.Context, *GetSubscribersIn) (*GetSubscribersOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSubscribers not implemented")
 }
 func (UnimplementedFriendsServiseServer) mustEmbedUnimplementedFriendsServiseServer() {}

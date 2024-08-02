@@ -5,12 +5,12 @@
 
 - [friends.proto](#friends-proto)
     - [GetSubscribersIn](#-GetSubscribersIn)
+    - [GetSubscribersOut](#-GetSubscribersOut)
     - [GetSubscriptionIn](#-GetSubscriptionIn)
+    - [GetSubscriptionOut](#-GetSubscriptionOut)
     - [Peer](#-Peer)
     - [SetFriendsIn](#-SetFriendsIn)
     - [SetFriendsOut](#-SetFriendsOut)
-    - [SubscribersOut](#-SubscribersOut)
-    - [SubscriptionOut](#-SubscriptionOut)
   
     - [FriendsServise](#-FriendsServise)
   
@@ -40,6 +40,21 @@ Request for subscribers
 
 
 
+<a name="-GetSubscribersOut"></a>
+
+### GetSubscribersOut
+Response subscribers
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subscribers | [Peer](#Peer) | repeated | Result of the operation |
+
+
+
+
+
+
 <a name="-GetSubscriptionIn"></a>
 
 ### GetSubscriptionIn
@@ -49,6 +64,21 @@ Request for subscription
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | uuid | [string](#string) |  | Peer uuid |
+
+
+
+
+
+
+<a name="-GetSubscriptionOut"></a>
+
+### GetSubscriptionOut
+Response subscription
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subscription | [Peer](#Peer) | repeated | Result of the operation |
 
 
 
@@ -100,36 +130,6 @@ Response add friend
 
 
 
-
-<a name="-SubscribersOut"></a>
-
-### SubscribersOut
-Response subscribers
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| subscribers | [Peer](#Peer) | repeated | Result of the operation |
-
-
-
-
-
-
-<a name="-SubscriptionOut"></a>
-
-### SubscriptionOut
-Response subscription
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| subscription | [Peer](#Peer) | repeated | Result of the operation |
-
-
-
-
-
  
 
  
@@ -145,8 +145,8 @@ Service for friends
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | SetFriends | [.SetFriendsIn](#SetFriendsIn) | [.SetFriendsOut](#SetFriendsOut) | Add friends method |
-| GetSubscription | [.GetSubscriptionIn](#GetSubscriptionIn) | [.SubscriptionOut](#SubscriptionOut) |  |
-| GetSubscribers | [.GetSubscribersIn](#GetSubscribersIn) | [.SubscribersOut](#SubscribersOut) |  |
+| GetSubscription | [.GetSubscriptionIn](#GetSubscriptionIn) | [.GetSubscriptionOut](#GetSubscriptionOut) |  |
+| GetSubscribers | [.GetSubscribersIn](#GetSubscribersIn) | [.GetSubscribersOut](#GetSubscribersOut) |  |
 
  
 
