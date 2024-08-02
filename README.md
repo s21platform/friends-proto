@@ -4,10 +4,10 @@
 ## Table of Contents
 
 - [friends.proto](#friends-proto)
-    - [GetSubscribersIn](#-GetSubscribersIn)
-    - [GetSubscribersOut](#-GetSubscribersOut)
-    - [GetSubscriptionIn](#-GetSubscriptionIn)
-    - [GetSubscriptionOut](#-GetSubscriptionOut)
+    - [GetPeerFollowIn](#-GetPeerFollowIn)
+    - [GetPeerFollowOut](#-GetPeerFollowOut)
+    - [GetWhoFollowPeerIn](#-GetWhoFollowPeerIn)
+    - [GetWhoFollowPeerOut](#-GetWhoFollowPeerOut)
     - [Peer](#-Peer)
     - [SetFriendsIn](#-SetFriendsIn)
     - [SetFriendsOut](#-SetFriendsOut)
@@ -25,39 +25,9 @@
 
 
 
-<a name="-GetSubscribersIn"></a>
+<a name="-GetPeerFollowIn"></a>
 
-### GetSubscribersIn
-Request for subscribers
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| uuid | [string](#string) |  | Peer uuid |
-
-
-
-
-
-
-<a name="-GetSubscribersOut"></a>
-
-### GetSubscribersOut
-Response subscribers
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| subscribers | [Peer](#Peer) | repeated | Result of the operation |
-
-
-
-
-
-
-<a name="-GetSubscriptionIn"></a>
-
-### GetSubscriptionIn
+### GetPeerFollowIn
 Request for subscription
 
 
@@ -70,15 +40,45 @@ Request for subscription
 
 
 
-<a name="-GetSubscriptionOut"></a>
+<a name="-GetPeerFollowOut"></a>
 
-### GetSubscriptionOut
+### GetPeerFollowOut
 Response subscription
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | subscription | [Peer](#Peer) | repeated | Result of the operation |
+
+
+
+
+
+
+<a name="-GetWhoFollowPeerIn"></a>
+
+### GetWhoFollowPeerIn
+Request for subscribers
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  | Peer uuid |
+
+
+
+
+
+
+<a name="-GetWhoFollowPeerOut"></a>
+
+### GetWhoFollowPeerOut
+Response subscribers
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subscribers | [Peer](#Peer) | repeated | Result of the operation |
 
 
 
@@ -145,8 +145,8 @@ Service for friends
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | SetFriends | [.SetFriendsIn](#SetFriendsIn) | [.SetFriendsOut](#SetFriendsOut) | Add friends method |
-| GetSubscription | [.GetSubscriptionIn](#GetSubscriptionIn) | [.GetSubscriptionOut](#GetSubscriptionOut) |  |
-| GetSubscribers | [.GetSubscribersIn](#GetSubscribersIn) | [.GetSubscribersOut](#GetSubscribersOut) |  |
+| GetPeerFollow | [.GetPeerFollowIn](#GetPeerFollowIn) | [.GetPeerFollowOut](#GetPeerFollowOut) |  |
+| GetWhoFollowPeer | [.GetWhoFollowPeerIn](#GetWhoFollowPeerIn) | [.GetWhoFollowPeerOut](#GetWhoFollowPeerOut) |  |
 
  
 

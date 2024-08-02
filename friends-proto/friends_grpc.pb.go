@@ -24,8 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 type FriendsServiseClient interface {
 	// Add friends method
 	SetFriends(ctx context.Context, in *SetFriendsIn, opts ...grpc.CallOption) (*SetFriendsOut, error)
-	GetSubscription(ctx context.Context, in *GetSubscriptionIn, opts ...grpc.CallOption) (*GetSubscriptionOut, error)
-	GetSubscribers(ctx context.Context, in *GetSubscribersIn, opts ...grpc.CallOption) (*GetSubscribersOut, error)
+	GetPeerFollow(ctx context.Context, in *GetPeerFollowIn, opts ...grpc.CallOption) (*GetPeerFollowOut, error)
+	GetWhoFollowPeer(ctx context.Context, in *GetWhoFollowPeerIn, opts ...grpc.CallOption) (*GetWhoFollowPeerOut, error)
 }
 
 type friendsServiseClient struct {
@@ -45,18 +45,18 @@ func (c *friendsServiseClient) SetFriends(ctx context.Context, in *SetFriendsIn,
 	return out, nil
 }
 
-func (c *friendsServiseClient) GetSubscription(ctx context.Context, in *GetSubscriptionIn, opts ...grpc.CallOption) (*GetSubscriptionOut, error) {
-	out := new(GetSubscriptionOut)
-	err := c.cc.Invoke(ctx, "/FriendsServise/GetSubscription", in, out, opts...)
+func (c *friendsServiseClient) GetPeerFollow(ctx context.Context, in *GetPeerFollowIn, opts ...grpc.CallOption) (*GetPeerFollowOut, error) {
+	out := new(GetPeerFollowOut)
+	err := c.cc.Invoke(ctx, "/FriendsServise/GetPeerFollow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *friendsServiseClient) GetSubscribers(ctx context.Context, in *GetSubscribersIn, opts ...grpc.CallOption) (*GetSubscribersOut, error) {
-	out := new(GetSubscribersOut)
-	err := c.cc.Invoke(ctx, "/FriendsServise/GetSubscribers", in, out, opts...)
+func (c *friendsServiseClient) GetWhoFollowPeer(ctx context.Context, in *GetWhoFollowPeerIn, opts ...grpc.CallOption) (*GetWhoFollowPeerOut, error) {
+	out := new(GetWhoFollowPeerOut)
+	err := c.cc.Invoke(ctx, "/FriendsServise/GetWhoFollowPeer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -69,8 +69,8 @@ func (c *friendsServiseClient) GetSubscribers(ctx context.Context, in *GetSubscr
 type FriendsServiseServer interface {
 	// Add friends method
 	SetFriends(context.Context, *SetFriendsIn) (*SetFriendsOut, error)
-	GetSubscription(context.Context, *GetSubscriptionIn) (*GetSubscriptionOut, error)
-	GetSubscribers(context.Context, *GetSubscribersIn) (*GetSubscribersOut, error)
+	GetPeerFollow(context.Context, *GetPeerFollowIn) (*GetPeerFollowOut, error)
+	GetWhoFollowPeer(context.Context, *GetWhoFollowPeerIn) (*GetWhoFollowPeerOut, error)
 	mustEmbedUnimplementedFriendsServiseServer()
 }
 
@@ -81,11 +81,11 @@ type UnimplementedFriendsServiseServer struct {
 func (UnimplementedFriendsServiseServer) SetFriends(context.Context, *SetFriendsIn) (*SetFriendsOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetFriends not implemented")
 }
-func (UnimplementedFriendsServiseServer) GetSubscription(context.Context, *GetSubscriptionIn) (*GetSubscriptionOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSubscription not implemented")
+func (UnimplementedFriendsServiseServer) GetPeerFollow(context.Context, *GetPeerFollowIn) (*GetPeerFollowOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPeerFollow not implemented")
 }
-func (UnimplementedFriendsServiseServer) GetSubscribers(context.Context, *GetSubscribersIn) (*GetSubscribersOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSubscribers not implemented")
+func (UnimplementedFriendsServiseServer) GetWhoFollowPeer(context.Context, *GetWhoFollowPeerIn) (*GetWhoFollowPeerOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWhoFollowPeer not implemented")
 }
 func (UnimplementedFriendsServiseServer) mustEmbedUnimplementedFriendsServiseServer() {}
 
@@ -118,38 +118,38 @@ func _FriendsServise_SetFriends_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FriendsServise_GetSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSubscriptionIn)
+func _FriendsServise_GetPeerFollow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPeerFollowIn)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FriendsServiseServer).GetSubscription(ctx, in)
+		return srv.(FriendsServiseServer).GetPeerFollow(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/FriendsServise/GetSubscription",
+		FullMethod: "/FriendsServise/GetPeerFollow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FriendsServiseServer).GetSubscription(ctx, req.(*GetSubscriptionIn))
+		return srv.(FriendsServiseServer).GetPeerFollow(ctx, req.(*GetPeerFollowIn))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FriendsServise_GetSubscribers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSubscribersIn)
+func _FriendsServise_GetWhoFollowPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWhoFollowPeerIn)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FriendsServiseServer).GetSubscribers(ctx, in)
+		return srv.(FriendsServiseServer).GetWhoFollowPeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/FriendsServise/GetSubscribers",
+		FullMethod: "/FriendsServise/GetWhoFollowPeer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FriendsServiseServer).GetSubscribers(ctx, req.(*GetSubscribersIn))
+		return srv.(FriendsServiseServer).GetWhoFollowPeer(ctx, req.(*GetWhoFollowPeerIn))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -166,12 +166,12 @@ var FriendsServise_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _FriendsServise_SetFriends_Handler,
 		},
 		{
-			MethodName: "GetSubscription",
-			Handler:    _FriendsServise_GetSubscription_Handler,
+			MethodName: "GetPeerFollow",
+			Handler:    _FriendsServise_GetPeerFollow_Handler,
 		},
 		{
-			MethodName: "GetSubscribers",
-			Handler:    _FriendsServise_GetSubscribers_Handler,
+			MethodName: "GetWhoFollowPeer",
+			Handler:    _FriendsServise_GetWhoFollowPeer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

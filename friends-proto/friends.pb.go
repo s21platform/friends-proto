@@ -177,7 +177,7 @@ func (x *Peer) GetUuid() string {
 }
 
 // Response subscription
-type GetSubscriptionOut struct {
+type GetPeerFollowOut struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -186,8 +186,8 @@ type GetSubscriptionOut struct {
 	Subscription []*Peer `protobuf:"bytes,1,rep,name=subscription,proto3" json:"subscription,omitempty"`
 }
 
-func (x *GetSubscriptionOut) Reset() {
-	*x = GetSubscriptionOut{}
+func (x *GetPeerFollowOut) Reset() {
+	*x = GetPeerFollowOut{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_friends_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -195,13 +195,13 @@ func (x *GetSubscriptionOut) Reset() {
 	}
 }
 
-func (x *GetSubscriptionOut) String() string {
+func (x *GetPeerFollowOut) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetSubscriptionOut) ProtoMessage() {}
+func (*GetPeerFollowOut) ProtoMessage() {}
 
-func (x *GetSubscriptionOut) ProtoReflect() protoreflect.Message {
+func (x *GetPeerFollowOut) ProtoReflect() protoreflect.Message {
 	mi := &file_friends_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -213,12 +213,12 @@ func (x *GetSubscriptionOut) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetSubscriptionOut.ProtoReflect.Descriptor instead.
-func (*GetSubscriptionOut) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPeerFollowOut.ProtoReflect.Descriptor instead.
+func (*GetPeerFollowOut) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *GetSubscriptionOut) GetSubscription() []*Peer {
+func (x *GetPeerFollowOut) GetSubscription() []*Peer {
 	if x != nil {
 		return x.Subscription
 	}
@@ -226,7 +226,7 @@ func (x *GetSubscriptionOut) GetSubscription() []*Peer {
 }
 
 // Response subscribers
-type GetSubscribersOut struct {
+type GetWhoFollowPeerOut struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -235,8 +235,8 @@ type GetSubscribersOut struct {
 	Subscribers []*Peer `protobuf:"bytes,1,rep,name=subscribers,proto3" json:"subscribers,omitempty"`
 }
 
-func (x *GetSubscribersOut) Reset() {
-	*x = GetSubscribersOut{}
+func (x *GetWhoFollowPeerOut) Reset() {
+	*x = GetWhoFollowPeerOut{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_friends_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -244,13 +244,13 @@ func (x *GetSubscribersOut) Reset() {
 	}
 }
 
-func (x *GetSubscribersOut) String() string {
+func (x *GetWhoFollowPeerOut) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetSubscribersOut) ProtoMessage() {}
+func (*GetWhoFollowPeerOut) ProtoMessage() {}
 
-func (x *GetSubscribersOut) ProtoReflect() protoreflect.Message {
+func (x *GetWhoFollowPeerOut) ProtoReflect() protoreflect.Message {
 	mi := &file_friends_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -262,12 +262,12 @@ func (x *GetSubscribersOut) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetSubscribersOut.ProtoReflect.Descriptor instead.
-func (*GetSubscribersOut) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetWhoFollowPeerOut.ProtoReflect.Descriptor instead.
+func (*GetWhoFollowPeerOut) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *GetSubscribersOut) GetSubscribers() []*Peer {
+func (x *GetWhoFollowPeerOut) GetSubscribers() []*Peer {
 	if x != nil {
 		return x.Subscribers
 	}
@@ -275,7 +275,7 @@ func (x *GetSubscribersOut) GetSubscribers() []*Peer {
 }
 
 // Request for subscription
-type GetSubscriptionIn struct {
+type GetPeerFollowIn struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -284,8 +284,8 @@ type GetSubscriptionIn struct {
 	Uuid string `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
 }
 
-func (x *GetSubscriptionIn) Reset() {
-	*x = GetSubscriptionIn{}
+func (x *GetPeerFollowIn) Reset() {
+	*x = GetPeerFollowIn{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_friends_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -293,13 +293,13 @@ func (x *GetSubscriptionIn) Reset() {
 	}
 }
 
-func (x *GetSubscriptionIn) String() string {
+func (x *GetPeerFollowIn) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetSubscriptionIn) ProtoMessage() {}
+func (*GetPeerFollowIn) ProtoMessage() {}
 
-func (x *GetSubscriptionIn) ProtoReflect() protoreflect.Message {
+func (x *GetPeerFollowIn) ProtoReflect() protoreflect.Message {
 	mi := &file_friends_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -311,12 +311,12 @@ func (x *GetSubscriptionIn) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetSubscriptionIn.ProtoReflect.Descriptor instead.
-func (*GetSubscriptionIn) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPeerFollowIn.ProtoReflect.Descriptor instead.
+func (*GetPeerFollowIn) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *GetSubscriptionIn) GetUuid() string {
+func (x *GetPeerFollowIn) GetUuid() string {
 	if x != nil {
 		return x.Uuid
 	}
@@ -324,7 +324,7 @@ func (x *GetSubscriptionIn) GetUuid() string {
 }
 
 // Request for subscribers
-type GetSubscribersIn struct {
+type GetWhoFollowPeerIn struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -333,8 +333,8 @@ type GetSubscribersIn struct {
 	Uuid string `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
 }
 
-func (x *GetSubscribersIn) Reset() {
-	*x = GetSubscribersIn{}
+func (x *GetWhoFollowPeerIn) Reset() {
+	*x = GetWhoFollowPeerIn{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_friends_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -342,13 +342,13 @@ func (x *GetSubscribersIn) Reset() {
 	}
 }
 
-func (x *GetSubscribersIn) String() string {
+func (x *GetWhoFollowPeerIn) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetSubscribersIn) ProtoMessage() {}
+func (*GetWhoFollowPeerIn) ProtoMessage() {}
 
-func (x *GetSubscribersIn) ProtoReflect() protoreflect.Message {
+func (x *GetWhoFollowPeerIn) ProtoReflect() protoreflect.Message {
 	mi := &file_friends_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -360,12 +360,12 @@ func (x *GetSubscribersIn) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetSubscribersIn.ProtoReflect.Descriptor instead.
-func (*GetSubscribersIn) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetWhoFollowPeerIn.ProtoReflect.Descriptor instead.
+func (*GetWhoFollowPeerIn) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GetSubscribersIn) GetUuid() string {
+func (x *GetWhoFollowPeerIn) GetUuid() string {
 	if x != nil {
 		return x.Uuid
 	}
@@ -384,31 +384,31 @@ var file_friends_proto_rawDesc = []byte{
 	0x0a, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52,
 	0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x22, 0x1a, 0x0a, 0x04, 0x50, 0x65, 0x65, 0x72,
 	0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
-	0x75, 0x75, 0x69, 0x64, 0x22, 0x3f, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63,
-	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x4f, 0x75, 0x74, 0x12, 0x29, 0x0a, 0x0c, 0x73, 0x75,
-	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
-	0x32, 0x05, 0x2e, 0x50, 0x65, 0x65, 0x72, 0x52, 0x0c, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
-	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x3c, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73,
-	0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x4f, 0x75, 0x74, 0x12, 0x27, 0x0a, 0x0b, 0x73, 0x75,
+	0x75, 0x75, 0x69, 0x64, 0x22, 0x3d, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x50, 0x65, 0x65, 0x72, 0x46,
+	0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x4f, 0x75, 0x74, 0x12, 0x29, 0x0a, 0x0c, 0x73, 0x75, 0x62, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05,
+	0x2e, 0x50, 0x65, 0x65, 0x72, 0x52, 0x0c, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x22, 0x3e, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x57, 0x68, 0x6f, 0x46, 0x6f, 0x6c,
+	0x6c, 0x6f, 0x77, 0x50, 0x65, 0x65, 0x72, 0x4f, 0x75, 0x74, 0x12, 0x27, 0x0a, 0x0b, 0x73, 0x75,
 	0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x05, 0x2e, 0x50, 0x65, 0x65, 0x72, 0x52, 0x0b, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62,
-	0x65, 0x72, 0x73, 0x22, 0x27, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72,
-	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22, 0x26, 0x0a, 0x10,
-	0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x49, 0x6e,
+	0x65, 0x72, 0x73, 0x22, 0x25, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x50, 0x65, 0x65, 0x72, 0x46, 0x6f,
+	0x6c, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22, 0x28, 0x0a, 0x12, 0x47, 0x65,
+	0x74, 0x57, 0x68, 0x6f, 0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x50, 0x65, 0x65, 0x72, 0x49, 0x6e,
 	0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
 	0x75, 0x75, 0x69, 0x64, 0x32, 0xb8, 0x01, 0x0a, 0x0e, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73,
 	0x53, 0x65, 0x72, 0x76, 0x69, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x0a, 0x53, 0x65, 0x74, 0x46, 0x72,
 	0x69, 0x65, 0x6e, 0x64, 0x73, 0x12, 0x0d, 0x2e, 0x53, 0x65, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e,
 	0x64, 0x73, 0x49, 0x6e, 0x1a, 0x0e, 0x2e, 0x53, 0x65, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64,
-	0x73, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x12, 0x3c, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62,
-	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x12, 0x2e, 0x47, 0x65, 0x74, 0x53,
-	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x6e, 0x1a, 0x13, 0x2e,
-	0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x4f,
-	0x75, 0x74, 0x22, 0x00, 0x12, 0x39, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63,
-	0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x12, 0x11, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x75, 0x62, 0x73,
-	0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x49, 0x6e, 0x1a, 0x12, 0x2e, 0x47, 0x65, 0x74, 0x53,
-	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x42,
+	0x73, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x12, 0x36, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x50, 0x65, 0x65,
+	0x72, 0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x12, 0x10, 0x2e, 0x47, 0x65, 0x74, 0x50, 0x65, 0x65,
+	0x72, 0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x49, 0x6e, 0x1a, 0x11, 0x2e, 0x47, 0x65, 0x74, 0x50,
+	0x65, 0x65, 0x72, 0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x12, 0x3f,
+	0x0a, 0x10, 0x47, 0x65, 0x74, 0x57, 0x68, 0x6f, 0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x50, 0x65,
+	0x65, 0x72, 0x12, 0x13, 0x2e, 0x47, 0x65, 0x74, 0x57, 0x68, 0x6f, 0x46, 0x6f, 0x6c, 0x6c, 0x6f,
+	0x77, 0x50, 0x65, 0x65, 0x72, 0x49, 0x6e, 0x1a, 0x14, 0x2e, 0x47, 0x65, 0x74, 0x57, 0x68, 0x6f,
+	0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x50, 0x65, 0x65, 0x72, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x42,
 	0x11, 0x5a, 0x0f, 0x2e, 0x2f, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x2d, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
@@ -427,23 +427,23 @@ func file_friends_proto_rawDescGZIP() []byte {
 
 var file_friends_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_friends_proto_goTypes = []interface{}{
-	(*SetFriendsIn)(nil),       // 0: SetFriendsIn
-	(*SetFriendsOut)(nil),      // 1: SetFriendsOut
-	(*Peer)(nil),               // 2: Peer
-	(*GetSubscriptionOut)(nil), // 3: GetSubscriptionOut
-	(*GetSubscribersOut)(nil),  // 4: GetSubscribersOut
-	(*GetSubscriptionIn)(nil),  // 5: GetSubscriptionIn
-	(*GetSubscribersIn)(nil),   // 6: GetSubscribersIn
+	(*SetFriendsIn)(nil),        // 0: SetFriendsIn
+	(*SetFriendsOut)(nil),       // 1: SetFriendsOut
+	(*Peer)(nil),                // 2: Peer
+	(*GetPeerFollowOut)(nil),    // 3: GetPeerFollowOut
+	(*GetWhoFollowPeerOut)(nil), // 4: GetWhoFollowPeerOut
+	(*GetPeerFollowIn)(nil),     // 5: GetPeerFollowIn
+	(*GetWhoFollowPeerIn)(nil),  // 6: GetWhoFollowPeerIn
 }
 var file_friends_proto_depIdxs = []int32{
-	2, // 0: GetSubscriptionOut.subscription:type_name -> Peer
-	2, // 1: GetSubscribersOut.subscribers:type_name -> Peer
+	2, // 0: GetPeerFollowOut.subscription:type_name -> Peer
+	2, // 1: GetWhoFollowPeerOut.subscribers:type_name -> Peer
 	0, // 2: FriendsServise.SetFriends:input_type -> SetFriendsIn
-	5, // 3: FriendsServise.GetSubscription:input_type -> GetSubscriptionIn
-	6, // 4: FriendsServise.GetSubscribers:input_type -> GetSubscribersIn
+	5, // 3: FriendsServise.GetPeerFollow:input_type -> GetPeerFollowIn
+	6, // 4: FriendsServise.GetWhoFollowPeer:input_type -> GetWhoFollowPeerIn
 	1, // 5: FriendsServise.SetFriends:output_type -> SetFriendsOut
-	3, // 6: FriendsServise.GetSubscription:output_type -> GetSubscriptionOut
-	4, // 7: FriendsServise.GetSubscribers:output_type -> GetSubscribersOut
+	3, // 6: FriendsServise.GetPeerFollow:output_type -> GetPeerFollowOut
+	4, // 7: FriendsServise.GetWhoFollowPeer:output_type -> GetWhoFollowPeerOut
 	5, // [5:8] is the sub-list for method output_type
 	2, // [2:5] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -494,7 +494,7 @@ func file_friends_proto_init() {
 			}
 		}
 		file_friends_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubscriptionOut); i {
+			switch v := v.(*GetPeerFollowOut); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -506,7 +506,7 @@ func file_friends_proto_init() {
 			}
 		}
 		file_friends_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubscribersOut); i {
+			switch v := v.(*GetWhoFollowPeerOut); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -518,7 +518,7 @@ func file_friends_proto_init() {
 			}
 		}
 		file_friends_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubscriptionIn); i {
+			switch v := v.(*GetPeerFollowIn); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -530,7 +530,7 @@ func file_friends_proto_init() {
 			}
 		}
 		file_friends_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSubscribersIn); i {
+			switch v := v.(*GetWhoFollowPeerIn); i {
 			case 0:
 				return &v.state
 			case 1:
