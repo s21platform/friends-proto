@@ -4,6 +4,11 @@
 ## Table of Contents
 
 - [friends.proto](#friends-proto)
+    - [GetPeerFollowIn](#-GetPeerFollowIn)
+    - [GetPeerFollowOut](#-GetPeerFollowOut)
+    - [GetWhoFollowPeerIn](#-GetWhoFollowPeerIn)
+    - [GetWhoFollowPeerOut](#-GetWhoFollowPeerOut)
+    - [Peer](#-Peer)
     - [SetFriendsIn](#-SetFriendsIn)
     - [SetFriendsOut](#-SetFriendsOut)
   
@@ -17,6 +22,81 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## friends.proto
+
+
+
+<a name="-GetPeerFollowIn"></a>
+
+### GetPeerFollowIn
+Request for subscription
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  | Peer uuid |
+
+
+
+
+
+
+<a name="-GetPeerFollowOut"></a>
+
+### GetPeerFollowOut
+Response subscription
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subscription | [Peer](#Peer) | repeated | Result of the operation |
+
+
+
+
+
+
+<a name="-GetWhoFollowPeerIn"></a>
+
+### GetWhoFollowPeerIn
+Request for subscribers
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  | Peer uuid |
+
+
+
+
+
+
+<a name="-GetWhoFollowPeerOut"></a>
+
+### GetWhoFollowPeerOut
+Response subscribers
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subscribers | [Peer](#Peer) | repeated | Result of the operation |
+
+
+
+
+
+
+<a name="-Peer"></a>
+
+### Peer
+Data for peer
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  | Peer uuid |
+
+
+
 
 
 
@@ -65,6 +145,8 @@ Service for friends
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | SetFriends | [.SetFriendsIn](#SetFriendsIn) | [.SetFriendsOut](#SetFriendsOut) | Add friends method |
+| GetPeerFollow | [.GetPeerFollowIn](#GetPeerFollowIn) | [.GetPeerFollowOut](#GetPeerFollowOut) |  |
+| GetWhoFollowPeer | [.GetWhoFollowPeerIn](#GetWhoFollowPeerIn) | [.GetWhoFollowPeerOut](#GetWhoFollowPeerOut) |  |
 
  
 

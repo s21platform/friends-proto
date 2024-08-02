@@ -24,6 +24,8 @@ const _ = grpc.SupportPackageIsVersion7
 type FriendsServiseClient interface {
 	// Add friends method
 	SetFriends(ctx context.Context, in *SetFriendsIn, opts ...grpc.CallOption) (*SetFriendsOut, error)
+	GetPeerFollow(ctx context.Context, in *GetPeerFollowIn, opts ...grpc.CallOption) (*GetPeerFollowOut, error)
+	GetWhoFollowPeer(ctx context.Context, in *GetWhoFollowPeerIn, opts ...grpc.CallOption) (*GetWhoFollowPeerOut, error)
 }
 
 type friendsServiseClient struct {
@@ -43,12 +45,32 @@ func (c *friendsServiseClient) SetFriends(ctx context.Context, in *SetFriendsIn,
 	return out, nil
 }
 
+func (c *friendsServiseClient) GetPeerFollow(ctx context.Context, in *GetPeerFollowIn, opts ...grpc.CallOption) (*GetPeerFollowOut, error) {
+	out := new(GetPeerFollowOut)
+	err := c.cc.Invoke(ctx, "/FriendsServise/GetPeerFollow", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *friendsServiseClient) GetWhoFollowPeer(ctx context.Context, in *GetWhoFollowPeerIn, opts ...grpc.CallOption) (*GetWhoFollowPeerOut, error) {
+	out := new(GetWhoFollowPeerOut)
+	err := c.cc.Invoke(ctx, "/FriendsServise/GetWhoFollowPeer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FriendsServiseServer is the server API for FriendsServise service.
 // All implementations must embed UnimplementedFriendsServiseServer
 // for forward compatibility
 type FriendsServiseServer interface {
 	// Add friends method
 	SetFriends(context.Context, *SetFriendsIn) (*SetFriendsOut, error)
+	GetPeerFollow(context.Context, *GetPeerFollowIn) (*GetPeerFollowOut, error)
+	GetWhoFollowPeer(context.Context, *GetWhoFollowPeerIn) (*GetWhoFollowPeerOut, error)
 	mustEmbedUnimplementedFriendsServiseServer()
 }
 
@@ -58,6 +80,12 @@ type UnimplementedFriendsServiseServer struct {
 
 func (UnimplementedFriendsServiseServer) SetFriends(context.Context, *SetFriendsIn) (*SetFriendsOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetFriends not implemented")
+}
+func (UnimplementedFriendsServiseServer) GetPeerFollow(context.Context, *GetPeerFollowIn) (*GetPeerFollowOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPeerFollow not implemented")
+}
+func (UnimplementedFriendsServiseServer) GetWhoFollowPeer(context.Context, *GetWhoFollowPeerIn) (*GetWhoFollowPeerOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWhoFollowPeer not implemented")
 }
 func (UnimplementedFriendsServiseServer) mustEmbedUnimplementedFriendsServiseServer() {}
 
@@ -90,6 +118,42 @@ func _FriendsServise_SetFriends_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FriendsServise_GetPeerFollow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPeerFollowIn)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FriendsServiseServer).GetPeerFollow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/FriendsServise/GetPeerFollow",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FriendsServiseServer).GetPeerFollow(ctx, req.(*GetPeerFollowIn))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FriendsServise_GetWhoFollowPeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWhoFollowPeerIn)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FriendsServiseServer).GetWhoFollowPeer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/FriendsServise/GetWhoFollowPeer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FriendsServiseServer).GetWhoFollowPeer(ctx, req.(*GetWhoFollowPeerIn))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // FriendsServise_ServiceDesc is the grpc.ServiceDesc for FriendsServise service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -100,6 +164,14 @@ var FriendsServise_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetFriends",
 			Handler:    _FriendsServise_SetFriends_Handler,
+		},
+		{
+			MethodName: "GetPeerFollow",
+			Handler:    _FriendsServise_GetPeerFollow_Handler,
+		},
+		{
+			MethodName: "GetWhoFollowPeer",
+			Handler:    _FriendsServise_GetWhoFollowPeer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
