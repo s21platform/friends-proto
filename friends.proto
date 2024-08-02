@@ -6,8 +6,8 @@ option go_package = "./friends-proto";
 service FriendsServise {
   //Add friends method
   rpc SetFriends (SetFriendsIn) returns (SetFriendsOut){};
-  rpc GetSubscription(GetSubscriptionIn) returns (GetSubscriptionOut){};
-  rpc GetSubscribers(GetSubscribersIn) returns (GetSubscribersOut){};
+  rpc GetUserFans(GetUserFansIn) returns (GetUserFansOut){};
+  rpc GetUserCrush(GetUserCrushIn) returns (GetUserCrushOut){};
 }
 
 // Data for add peer_1 and peer_2
@@ -30,22 +30,22 @@ message Peer {
   string uuid = 1;
 }
 //Response subscription
-message GetSubscriptionOut {
+message GetUserFansOut {
   //Result of the operation
   repeated Peer subscription = 1;
 }
 //Response subscribers
-message GetSubscribersOut {
+message GetUserCrushOut {
   //Result of the operation
   repeated Peer subscribers = 1;
 }
 //Request for subscription
-message GetSubscriptionIn {
+message GetUserFansIn {
   //Peer uuid
   string uuid = 1;
 }
 //Request for subscribers
-message GetSubscribersIn {
+message GetUserCrushIn {
   //Peer uuid
   string uuid = 1;
 }
