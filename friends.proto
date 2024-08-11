@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "./friends-proto";
 
 //Service for friends
-service FriendsServise {
+service FriendsService {
   //Add friends method
   rpc SetFriends (SetFriendsIn) returns (SetFriendsOut){};
   rpc GetPeerFollow(GetPeerFollowIn) returns (GetPeerFollowOut){};
