@@ -12,7 +12,7 @@
     - [SetFriendsIn](#-SetFriendsIn)
     - [SetFriendsOut](#-SetFriendsOut)
   
-    - [FriendsServise](#-FriendsServise)
+    - [FriendsService](#-FriendsService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -137,9 +137,9 @@ Response add friend
  
 
 
-<a name="-FriendsServise"></a>
+<a name="-FriendsService"></a>
 
-### FriendsServise
+### FriendsService
 Service for friends
 
 | Method Name | Request Type | Response Type | Description |
