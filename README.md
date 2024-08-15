@@ -8,7 +8,11 @@
     - [GetPeerFollowOut](#-GetPeerFollowOut)
     - [GetWhoFollowPeerIn](#-GetWhoFollowPeerIn)
     - [GetWhoFollowPeerOut](#-GetWhoFollowPeerOut)
+    - [InvitePeerIn](#-InvitePeerIn)
+    - [InvitePeerOut](#-InvitePeerOut)
     - [Peer](#-Peer)
+    - [RemoveSubscribeIn](#-RemoveSubscribeIn)
+    - [RemoveSubscribeOut](#-RemoveSubscribeOut)
     - [SetFriendsIn](#-SetFriendsIn)
     - [SetFriendsOut](#-SetFriendsOut)
   
@@ -85,6 +89,32 @@ Response subscribers
 
 
 
+<a name="-InvitePeerIn"></a>
+
+### InvitePeerIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  |  |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-InvitePeerOut"></a>
+
+### InvitePeerOut
+
+
+
+
+
+
+
 <a name="-Peer"></a>
 
 ### Peer
@@ -94,6 +124,32 @@ Data for peer
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | uuid | [string](#string) |  | Peer uuid |
+
+
+
+
+
+
+<a name="-RemoveSubscribeIn"></a>
+
+### RemoveSubscribeIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| peer_1 | [string](#string) |  |  |
+| peer_2 | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-RemoveSubscribeOut"></a>
+
+### RemoveSubscribeOut
+
 
 
 
@@ -147,6 +203,8 @@ Service for friends
 | SetFriends | [.SetFriendsIn](#SetFriendsIn) | [.SetFriendsOut](#SetFriendsOut) | Add friends method |
 | GetPeerFollow | [.GetPeerFollowIn](#GetPeerFollowIn) | [.GetPeerFollowOut](#GetPeerFollowOut) |  |
 | GetWhoFollowPeer | [.GetWhoFollowPeerIn](#GetWhoFollowPeerIn) | [.GetWhoFollowPeerOut](#GetWhoFollowPeerOut) |  |
+| RemoveSubscribe | [.RemoveSubscribeIn](#RemoveSubscribeIn) | [.RemoveSubscribeOut](#RemoveSubscribeOut) |  |
+| InvitePeer | [.InvitePeerIn](#InvitePeerIn) | [.InvitePeerOut](#InvitePeerOut) |  |
 
  
 

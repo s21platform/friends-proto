@@ -5,9 +5,11 @@ option go_package = "./friends-proto";
 //Service for friends
 service FriendsService {
   //Add friends method
-  rpc SetFriends (SetFriendsIn) returns (SetFriendsOut){};
+  rpc SetFriends(SetFriendsIn) returns (SetFriendsOut){};
   rpc GetPeerFollow(GetPeerFollowIn) returns (GetPeerFollowOut){};
   rpc GetWhoFollowPeer(GetWhoFollowPeerIn) returns (GetWhoFollowPeerOut){};
+  rpc RemoveSubscribe(RemoveSubscribeIn) returns (RemoveSubscribeOut){};
+  rpc InvitePeer(InvitePeerIn) returns (InvitePeerOut);
 }
 
 // Data for add peer_1 and peer_2
@@ -48,4 +50,20 @@ message GetPeerFollowIn {
 message GetWhoFollowPeerIn {
   //Peer uuid
   string uuid = 1;
+}
+
+message RemoveSubscribeIn {
+  string peer_1 = 1;
+  string peer_2 = 2;
+}
+
+message RemoveSubscribeOut{
+}
+
+message InvitePeerIn{
+  string uuid = 1;
+  string email = 2;
+}
+
+message InvitePeerOut{
 }
