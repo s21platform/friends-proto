@@ -9,7 +9,7 @@ service FriendsService {
   rpc GetPeerFollow(GetPeerFollowIn) returns (GetPeerFollowOut){};
   rpc GetWhoFollowPeer(GetWhoFollowPeerIn) returns (GetWhoFollowPeerOut){};
   rpc RemoveSubscribe(RemoveSubscribeIn) returns (RemoveSubscribeOut){};
-  rpc InvitePeer(InvitePeerIn) returns (InvitePeerOut);
+  rpc InvitePeer(InvitePeerIn) returns (InvitePeerOut){};
 }
 
 // Data for add peer_1 and peer_2
