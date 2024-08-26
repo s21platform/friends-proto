@@ -9,7 +9,7 @@ service FriendsService {
   rpc GetPeerFollow(GetPeerFollowIn) returns (GetPeerFollowOut){};
   rpc GetWhoFollowPeer(GetWhoFollowPeerIn) returns (GetWhoFollowPeerOut){};
   rpc RemoveSubscribe(RemoveSubscribeIn) returns (RemoveSubscribeOut){};
-  rpc InvitePeer(InvitePeerIn) returns (InvitePeerOut){};
+  rpc GetInvitePeer(GetInvitePeerIn) returns (GetInvitePeerOut){};
 }
 
 // Data for add peer_1 and peer_2
@@ -31,6 +31,23 @@ message Peer {
   //Peer uuid
   string uuid = 1;
 }
+
+message RemoveSubscribeIn {
+    string peer_1 = 1;
+    string peer_2 = 2;
+  }
+
+  message RemoveSubscribeOut{
+  }
+
+  message GetInvitePeerIn{
+    string uuid = 1;
+    string email = 2;
+  }
+
+  message GetInvitePeerOut{
+  }
+
 //Response subscription
 message GetPeerFollowOut {
   //Result of the operation
@@ -52,18 +69,3 @@ message GetWhoFollowPeerIn {
   string uuid = 1;
 }
 
-message RemoveSubscribeIn {
-  string peer_1 = 1;
-  string peer_2 = 2;
-}
-
-message RemoveSubscribeOut{
-}
-
-message InvitePeerIn{
-  string uuid = 1;
-  string email = 2;
-}
-
-message InvitePeerOut{
-}
