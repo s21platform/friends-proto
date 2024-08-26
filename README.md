@@ -4,12 +4,12 @@
 ## Table of Contents
 
 - [friends.proto](#friends-proto)
+    - [GetInvitePeerIn](#-GetInvitePeerIn)
+    - [GetInvitePeerOut](#-GetInvitePeerOut)
     - [GetPeerFollowIn](#-GetPeerFollowIn)
     - [GetPeerFollowOut](#-GetPeerFollowOut)
     - [GetWhoFollowPeerIn](#-GetWhoFollowPeerIn)
     - [GetWhoFollowPeerOut](#-GetWhoFollowPeerOut)
-    - [InvitePeerIn](#-InvitePeerIn)
-    - [InvitePeerOut](#-InvitePeerOut)
     - [Peer](#-Peer)
     - [RemoveSubscribeIn](#-RemoveSubscribeIn)
     - [RemoveSubscribeOut](#-RemoveSubscribeOut)
@@ -26,6 +26,32 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## friends.proto
+
+
+
+<a name="-GetInvitePeerIn"></a>
+
+### GetInvitePeerIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| uuid | [string](#string) |  |  |
+| email | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-GetInvitePeerOut"></a>
+
+### GetInvitePeerOut
+
+
+
+
 
 
 
@@ -83,32 +109,6 @@ Response subscribers
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | subscribers | [Peer](#Peer) | repeated | Result of the operation |
-
-
-
-
-
-
-<a name="-InvitePeerIn"></a>
-
-### InvitePeerIn
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| uuid | [string](#string) |  |  |
-| email | [string](#string) |  |  |
-
-
-
-
-
-
-<a name="-InvitePeerOut"></a>
-
-### InvitePeerOut
-
 
 
 
@@ -204,7 +204,7 @@ Service for friends
 | GetPeerFollow | [.GetPeerFollowIn](#GetPeerFollowIn) | [.GetPeerFollowOut](#GetPeerFollowOut) |  |
 | GetWhoFollowPeer | [.GetWhoFollowPeerIn](#GetWhoFollowPeerIn) | [.GetWhoFollowPeerOut](#GetWhoFollowPeerOut) |  |
 | RemoveSubscribe | [.RemoveSubscribeIn](#RemoveSubscribeIn) | [.RemoveSubscribeOut](#RemoveSubscribeOut) |  |
-| InvitePeer | [.InvitePeerIn](#InvitePeerIn) | [.InvitePeerOut](#InvitePeerOut) |  |
+| GetInvitePeer | [.GetInvitePeerIn](#GetInvitePeerIn) | [.GetInvitePeerOut](#GetInvitePeerOut) |  |
 
  
 

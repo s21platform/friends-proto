@@ -23,7 +23,7 @@ const (
 	FriendsService_GetPeerFollow_FullMethodName    = "/FriendsService/GetPeerFollow"
 	FriendsService_GetWhoFollowPeer_FullMethodName = "/FriendsService/GetWhoFollowPeer"
 	FriendsService_RemoveSubscribe_FullMethodName  = "/FriendsService/RemoveSubscribe"
-	FriendsService_InvitePeer_FullMethodName       = "/FriendsService/InvitePeer"
+	FriendsService_GetInvitePeer_FullMethodName    = "/FriendsService/GetInvitePeer"
 )
 
 // FriendsServiceClient is the client API for FriendsService service.
@@ -37,7 +37,7 @@ type FriendsServiceClient interface {
 	GetPeerFollow(ctx context.Context, in *GetPeerFollowIn, opts ...grpc.CallOption) (*GetPeerFollowOut, error)
 	GetWhoFollowPeer(ctx context.Context, in *GetWhoFollowPeerIn, opts ...grpc.CallOption) (*GetWhoFollowPeerOut, error)
 	RemoveSubscribe(ctx context.Context, in *RemoveSubscribeIn, opts ...grpc.CallOption) (*RemoveSubscribeOut, error)
-	InvitePeer(ctx context.Context, in *InvitePeerIn, opts ...grpc.CallOption) (*InvitePeerOut, error)
+	GetInvitePeer(ctx context.Context, in *GetInvitePeerIn, opts ...grpc.CallOption) (*GetInvitePeerOut, error)
 }
 
 type friendsServiceClient struct {
@@ -88,10 +88,10 @@ func (c *friendsServiceClient) RemoveSubscribe(ctx context.Context, in *RemoveSu
 	return out, nil
 }
 
-func (c *friendsServiceClient) InvitePeer(ctx context.Context, in *InvitePeerIn, opts ...grpc.CallOption) (*InvitePeerOut, error) {
+func (c *friendsServiceClient) GetInvitePeer(ctx context.Context, in *GetInvitePeerIn, opts ...grpc.CallOption) (*GetInvitePeerOut, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(InvitePeerOut)
-	err := c.cc.Invoke(ctx, FriendsService_InvitePeer_FullMethodName, in, out, cOpts...)
+	out := new(GetInvitePeerOut)
+	err := c.cc.Invoke(ctx, FriendsService_GetInvitePeer_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -109,7 +109,7 @@ type FriendsServiceServer interface {
 	GetPeerFollow(context.Context, *GetPeerFollowIn) (*GetPeerFollowOut, error)
 	GetWhoFollowPeer(context.Context, *GetWhoFollowPeerIn) (*GetWhoFollowPeerOut, error)
 	RemoveSubscribe(context.Context, *RemoveSubscribeIn) (*RemoveSubscribeOut, error)
-	InvitePeer(context.Context, *InvitePeerIn) (*InvitePeerOut, error)
+	GetInvitePeer(context.Context, *GetInvitePeerIn) (*GetInvitePeerOut, error)
 	mustEmbedUnimplementedFriendsServiceServer()
 }
 
@@ -129,8 +129,8 @@ func (UnimplementedFriendsServiceServer) GetWhoFollowPeer(context.Context, *GetW
 func (UnimplementedFriendsServiceServer) RemoveSubscribe(context.Context, *RemoveSubscribeIn) (*RemoveSubscribeOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemoveSubscribe not implemented")
 }
-func (UnimplementedFriendsServiceServer) InvitePeer(context.Context, *InvitePeerIn) (*InvitePeerOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method InvitePeer not implemented")
+func (UnimplementedFriendsServiceServer) GetInvitePeer(context.Context, *GetInvitePeerIn) (*GetInvitePeerOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetInvitePeer not implemented")
 }
 func (UnimplementedFriendsServiceServer) mustEmbedUnimplementedFriendsServiceServer() {}
 
@@ -217,20 +217,20 @@ func _FriendsService_RemoveSubscribe_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _FriendsService_InvitePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(InvitePeerIn)
+func _FriendsService_GetInvitePeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInvitePeerIn)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(FriendsServiceServer).InvitePeer(ctx, in)
+		return srv.(FriendsServiceServer).GetInvitePeer(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: FriendsService_InvitePeer_FullMethodName,
+		FullMethod: FriendsService_GetInvitePeer_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FriendsServiceServer).InvitePeer(ctx, req.(*InvitePeerIn))
+		return srv.(FriendsServiceServer).GetInvitePeer(ctx, req.(*GetInvitePeerIn))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -259,8 +259,8 @@ var FriendsService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _FriendsService_RemoveSubscribe_Handler,
 		},
 		{
-			MethodName: "InvitePeer",
-			Handler:    _FriendsService_InvitePeer_Handler,
+			MethodName: "GetInvitePeer",
+			Handler:    _FriendsService_GetInvitePeer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
