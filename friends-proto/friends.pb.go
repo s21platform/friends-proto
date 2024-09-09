@@ -132,6 +132,117 @@ type SetFriendsIn struct {
 	Peer_2 string `protobuf:"bytes,2,opt,name=peer_2,json=peer2,proto3" json:"peer_2,omitempty"`
 }
 
+func (x *RemoveFriendsIn) Reset() {
+	*x = RemoveFriendsIn{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_friends_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RemoveFriendsIn) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveFriendsIn) ProtoMessage() {}
+
+
+func (x *SetFriendsIn) ProtoReflect() protoreflect.Message {
+	mi := &file_friends_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetFriendsIn.ProtoReflect.Descriptor instead.
+func (*SetFriendsIn) Descriptor() ([]byte, []int) {
+	return file_friends_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *RemoveFriendsIn) GetPeer_1() string {
+	if x != nil {
+		return x.Peer_1
+	}
+	return ""
+}
+
+func (x *RemoveFriendsIn) GetPeer_2() string {
+	if x != nil {
+		return x.Peer_2
+	}
+	return ""
+}
+
+type RemoveFriendsOut struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Peer_1 string `protobuf:"bytes,1,opt,name=peer_1,json=peer1,proto3" json:"peer_1,omitempty"`
+	Peer_2 string `protobuf:"bytes,2,opt,name=peer_2,json=peer2,proto3" json:"peer_2,omitempty"`
+}
+
+func (x *RemoveFriendsOut) Reset() {
+	*x = RemoveFriendsOut{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_friends_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RemoveFriendsOut) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveFriendsOut) ProtoMessage() {}
+
+func (x *RemoveFriendsOut) ProtoReflect() protoreflect.Message {
+	mi := &file_friends_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveFriendsOut.ProtoReflect.Descriptor instead.
+func (*RemoveFriendsOut) Descriptor() ([]byte, []int) {
+	return file_friends_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *RemoveFriendsOut) GetPeer_1() string {
+	if x != nil {
+		return x.Peer_1
+	}
+	return ""
+}
+
+func (x *RemoveFriendsOut) GetPeer_2() string {
+	if x != nil {
+		return x.Peer_2
+	}
+	return ""
+}
+
+// Data for add peer_1 and peer_2
+type SetFriendsIn struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Success bool `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+}
+
 func (x *SetFriendsIn) Reset() {
 	*x = SetFriendsIn{}
 	if protoimpl.UnsafeEnabled {
@@ -164,18 +275,11 @@ func (*SetFriendsIn) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *SetFriendsIn) GetPeer_1() string {
+func (x *SetFriendsIn) GetSuccess() bool {
 	if x != nil {
-		return x.Peer_1
+		return x.Success
 	}
-	return ""
-}
-
-func (x *SetFriendsIn) GetPeer_2() string {
-	if x != nil {
-		return x.Peer_2
-	}
-	return ""
+	return false
 }
 
 // Response add friend

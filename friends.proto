@@ -28,6 +28,11 @@ message SetFriendsIn {
   string peer_2 = 2;
 }
 
+// Data for add peer_1 and peer_2
+message SetFriendsIn {
+  bool success = 1;
+}
+
 //Response add friend
 message SetFriendsOut {
   //Result of the operation
