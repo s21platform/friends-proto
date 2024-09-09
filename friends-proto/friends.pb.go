@@ -269,7 +269,7 @@ func (*RemoveSubscribeOut) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{4}
 }
 
-type GetInvitePeerIn struct {
+type SetInvitePeerIn struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -278,8 +278,8 @@ type GetInvitePeerIn struct {
 	Email string `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
 }
 
-func (x *GetInvitePeerIn) Reset() {
-	*x = GetInvitePeerIn{}
+func (x *SetInvitePeerIn) Reset() {
+	*x = SetInvitePeerIn{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_friends_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -287,13 +287,13 @@ func (x *GetInvitePeerIn) Reset() {
 	}
 }
 
-func (x *GetInvitePeerIn) String() string {
+func (x *SetInvitePeerIn) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetInvitePeerIn) ProtoMessage() {}
+func (*SetInvitePeerIn) ProtoMessage() {}
 
-func (x *GetInvitePeerIn) ProtoReflect() protoreflect.Message {
+func (x *SetInvitePeerIn) ProtoReflect() protoreflect.Message {
 	mi := &file_friends_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -305,33 +305,33 @@ func (x *GetInvitePeerIn) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetInvitePeerIn.ProtoReflect.Descriptor instead.
-func (*GetInvitePeerIn) Descriptor() ([]byte, []int) {
+// Deprecated: Use SetInvitePeerIn.ProtoReflect.Descriptor instead.
+func (*SetInvitePeerIn) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *GetInvitePeerIn) GetUuid() string {
+func (x *SetInvitePeerIn) GetUuid() string {
 	if x != nil {
 		return x.Uuid
 	}
 	return ""
 }
 
-func (x *GetInvitePeerIn) GetEmail() string {
+func (x *SetInvitePeerIn) GetEmail() string {
 	if x != nil {
 		return x.Email
 	}
 	return ""
 }
 
-type GetInvitePeerOut struct {
+type SetInvitePeerOut struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *GetInvitePeerOut) Reset() {
-	*x = GetInvitePeerOut{}
+func (x *SetInvitePeerOut) Reset() {
+	*x = SetInvitePeerOut{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_friends_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -339,13 +339,13 @@ func (x *GetInvitePeerOut) Reset() {
 	}
 }
 
-func (x *GetInvitePeerOut) String() string {
+func (x *SetInvitePeerOut) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetInvitePeerOut) ProtoMessage() {}
+func (*SetInvitePeerOut) ProtoMessage() {}
 
-func (x *GetInvitePeerOut) ProtoReflect() protoreflect.Message {
+func (x *SetInvitePeerOut) ProtoReflect() protoreflect.Message {
 	mi := &file_friends_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -357,8 +357,8 @@ func (x *GetInvitePeerOut) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetInvitePeerOut.ProtoReflect.Descriptor instead.
-func (*GetInvitePeerOut) Descriptor() ([]byte, []int) {
+// Deprecated: Use SetInvitePeerOut.ProtoReflect.Descriptor instead.
+func (*SetInvitePeerOut) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{6}
 }
 
@@ -576,10 +576,10 @@ var file_friends_proto_rawDesc = []byte{
 	0x12, 0x15, 0x0a, 0x06, 0x70, 0x65, 0x65, 0x72, 0x5f, 0x32, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x05, 0x70, 0x65, 0x65, 0x72, 0x32, 0x22, 0x14, 0x0a, 0x12, 0x52, 0x65, 0x6d, 0x6f, 0x76,
 	0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x4f, 0x75, 0x74, 0x22, 0x3b, 0x0a,
-	0x0f, 0x47, 0x65, 0x74, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x65, 0x50, 0x65, 0x65, 0x72, 0x49, 0x6e,
+	0x0f, 0x53, 0x65, 0x74, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x65, 0x50, 0x65, 0x65, 0x72, 0x49, 0x6e,
 	0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
 	0x75, 0x75, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x22, 0x12, 0x0a, 0x10, 0x47, 0x65,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x22, 0x12, 0x0a, 0x10, 0x53, 0x65,
 	0x74, 0x49, 0x6e, 0x76, 0x69, 0x74, 0x65, 0x50, 0x65, 0x65, 0x72, 0x4f, 0x75, 0x74, 0x22, 0x3d,
 	0x0a, 0x10, 0x47, 0x65, 0x74, 0x50, 0x65, 0x65, 0x72, 0x46, 0x6f, 0x6c, 0x6c, 0x6f, 0x77, 0x4f,
 	0x75, 0x74, 0x12, 0x29, 0x0a, 0x0c, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
@@ -609,9 +609,9 @@ var file_friends_proto_rawDesc = []byte{
 	0x6f, 0x76, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x12, 0x12, 0x2e, 0x52,
 	0x65, 0x6d, 0x6f, 0x76, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x49, 0x6e,
 	0x1a, 0x13, 0x2e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
-	0x62, 0x65, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x12, 0x36, 0x0a, 0x0d, 0x47, 0x65, 0x74, 0x49, 0x6e,
-	0x76, 0x69, 0x74, 0x65, 0x50, 0x65, 0x65, 0x72, 0x12, 0x10, 0x2e, 0x47, 0x65, 0x74, 0x49, 0x6e,
-	0x76, 0x69, 0x74, 0x65, 0x50, 0x65, 0x65, 0x72, 0x49, 0x6e, 0x1a, 0x11, 0x2e, 0x47, 0x65, 0x74,
+	0x62, 0x65, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x12, 0x36, 0x0a, 0x0d, 0x53, 0x65, 0x74, 0x49, 0x6e,
+	0x76, 0x69, 0x74, 0x65, 0x50, 0x65, 0x65, 0x72, 0x12, 0x10, 0x2e, 0x53, 0x65, 0x74, 0x49, 0x6e,
+	0x76, 0x69, 0x74, 0x65, 0x50, 0x65, 0x65, 0x72, 0x49, 0x6e, 0x1a, 0x11, 0x2e, 0x53, 0x65, 0x74,
 	0x49, 0x6e, 0x76, 0x69, 0x74, 0x65, 0x50, 0x65, 0x65, 0x72, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x42,
 	0x11, 0x5a, 0x0f, 0x2e, 0x2f, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x2d, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
@@ -636,8 +636,8 @@ var file_friends_proto_goTypes = []any{
 	(*Peer)(nil),                // 2: Peer
 	(*RemoveSubscribeIn)(nil),   // 3: RemoveSubscribeIn
 	(*RemoveSubscribeOut)(nil),  // 4: RemoveSubscribeOut
-	(*GetInvitePeerIn)(nil),     // 5: GetInvitePeerIn
-	(*GetInvitePeerOut)(nil),    // 6: GetInvitePeerOut
+	(*SetInvitePeerIn)(nil),     // 5: SetInvitePeerIn
+	(*SetInvitePeerOut)(nil),    // 6: SetInvitePeerOut
 	(*GetPeerFollowOut)(nil),    // 7: GetPeerFollowOut
 	(*GetWhoFollowPeerOut)(nil), // 8: GetWhoFollowPeerOut
 	(*GetPeerFollowIn)(nil),     // 9: GetPeerFollowIn
@@ -650,12 +650,12 @@ var file_friends_proto_depIdxs = []int32{
 	9,  // 3: FriendsService.GetPeerFollow:input_type -> GetPeerFollowIn
 	10, // 4: FriendsService.GetWhoFollowPeer:input_type -> GetWhoFollowPeerIn
 	3,  // 5: FriendsService.RemoveSubscribe:input_type -> RemoveSubscribeIn
-	5,  // 6: FriendsService.GetInvitePeer:input_type -> GetInvitePeerIn
+	5,  // 6: FriendsService.SetInvitePeer:input_type -> SetInvitePeerIn
 	1,  // 7: FriendsService.SetFriends:output_type -> SetFriendsOut
 	7,  // 8: FriendsService.GetPeerFollow:output_type -> GetPeerFollowOut
 	8,  // 9: FriendsService.GetWhoFollowPeer:output_type -> GetWhoFollowPeerOut
 	4,  // 10: FriendsService.RemoveSubscribe:output_type -> RemoveSubscribeOut
-	6,  // 11: FriendsService.GetInvitePeer:output_type -> GetInvitePeerOut
+	6,  // 11: FriendsService.SetInvitePeer:output_type -> SetInvitePeerOut
 	7,  // [7:12] is the sub-list for method output_type
 	2,  // [2:7] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name
@@ -730,7 +730,7 @@ func file_friends_proto_init() {
 			}
 		}
 		file_friends_proto_msgTypes[5].Exporter = func(v any, i int) any {
-			switch v := v.(*GetInvitePeerIn); i {
+			switch v := v.(*SetInvitePeerIn); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -742,7 +742,7 @@ func file_friends_proto_init() {
 			}
 		}
 		file_friends_proto_msgTypes[6].Exporter = func(v any, i int) any {
-			switch v := v.(*GetInvitePeerOut); i {
+			switch v := v.(*SetInvitePeerOut); i {
 			case 0:
 				return &v.state
 			case 1:
