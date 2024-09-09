@@ -49,12 +49,12 @@ Request for subscription
 <a name="-GetPeerFollowOut"></a>
 
 ### GetPeerFollowOut
-Response subscription
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subscription | [Peer](#Peer) | repeated | Result of the operation |
+| subscription | [Peer](#Peer) | repeated |  |
 
 
 
@@ -94,7 +94,7 @@ Response subscribers
 <a name="-Peer"></a>
 
 ### Peer
-Data for peer
+
 
 
 | Field | Type | Label | Description |
@@ -130,8 +130,7 @@ Data for peer
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| peer_1 | [string](#string) |  |  |
-| peer_2 | [string](#string) |  |  |
+| success | [bool](#bool) |  |  |
 
 
 
@@ -167,12 +166,13 @@ Data for peer
 <a name="-SetFriendsIn"></a>
 
 ### SetFriendsIn
-Data for add peer_1 and peer_2
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| success | [bool](#bool) |  |  |
+| peer_1 | [string](#string) |  |  |
+| peer_2 | [string](#string) |  |  |
 
 
 
@@ -182,12 +182,12 @@ Data for add peer_1 and peer_2
 <a name="-SetFriendsOut"></a>
 
 ### SetFriendsOut
-Response add friend
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| success | [bool](#bool) |  | Result of the operation |
+| success | [bool](#bool) |  |  |
 
 
 

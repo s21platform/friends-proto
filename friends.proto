@@ -19,22 +19,18 @@ message RemoveFriendsIn{
 }
 
 message RemoveFriendsOut{
+  bool success = 1;
+}
+
+message SetFriendsIn {
   string peer_1 = 1;
   string peer_2 = 2;
 }
 
-// Data for add peer_1 and peer_2
-message SetFriendsIn {
-  bool success = 1;
-}
-
-//Response add friend
 message SetFriendsOut {
-  //Result of the operation
   bool success = 1;
 }
 
-//Data for peer
 message Peer {
   //Peer uuid
   string uuid = 1;
@@ -43,24 +39,23 @@ message Peer {
 message RemoveSubscribeIn {
     string peer_1 = 1;
     string peer_2 = 2;
-  }
+}
 
-  message RemoveSubscribeOut{
-  }
+message RemoveSubscribeOut{
+}
 
-  message SetInvitePeerIn{
+message SetInvitePeerIn{
     string uuid = 1;
     string email = 2;
-  }
+}
 
-  message SetInvitePeerOut{
-  }
+message SetInvitePeerOut{
+}
 
-//Response subscription
 message GetPeerFollowOut {
-  //Result of the operation
   repeated Peer subscription = 1;
 }
+
 //Response subscribers
 message GetWhoFollowPeerOut {
   //Result of the operation
