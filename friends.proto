@@ -10,13 +10,21 @@ service FriendsService {
   rpc GetWhoFollowPeer(GetWhoFollowPeerIn) returns (GetWhoFollowPeerOut){};
   rpc RemoveSubscribe(RemoveSubscribeIn) returns (RemoveSubscribeOut){};
   rpc SetInvitePeer(SetInvitePeerIn) returns (SetInvitePeerOut){};
+  rpc RemoveFriends(RemoveFriendsIn) returns (RemoveFriendsOut){};
+}
+
+message RemoveFriendsIn{
+  string peer_1 = 1;
+  string peer_2 = 2;
+}
+
+message RemoveFriendsOut{
+  bool success = 1;
 }
 
 // Data for add peer_1 and peer_2
 message SetFriendsIn {
-  // Peer_1 id
   string peer_1 = 1;
-  // Peer_2 id
   string peer_2 = 2;
 }
 

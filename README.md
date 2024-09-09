@@ -9,6 +9,8 @@
     - [GetWhoFollowPeerIn](#-GetWhoFollowPeerIn)
     - [GetWhoFollowPeerOut](#-GetWhoFollowPeerOut)
     - [Peer](#-Peer)
+    - [RemoveFriendsIn](#-RemoveFriendsIn)
+    - [RemoveFriendsOut](#-RemoveFriendsOut)
     - [RemoveSubscribeIn](#-RemoveSubscribeIn)
     - [RemoveSubscribeOut](#-RemoveSubscribeOut)
     - [SetFriendsIn](#-SetFriendsIn)
@@ -104,6 +106,37 @@ Data for peer
 
 
 
+<a name="-RemoveFriendsIn"></a>
+
+### RemoveFriendsIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| peer_1 | [string](#string) |  |  |
+| peer_2 | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-RemoveFriendsOut"></a>
+
+### RemoveFriendsOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
+
+
+
+
+
+
 <a name="-RemoveSubscribeIn"></a>
 
 ### RemoveSubscribeIn
@@ -138,8 +171,8 @@ Data for add peer_1 and peer_2
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| peer_1 | [string](#string) |  | Peer_1 id |
-| peer_2 | [string](#string) |  | Peer_2 id |
+| peer_1 | [string](#string) |  |  |
+| peer_2 | [string](#string) |  |  |
 
 
 
@@ -205,6 +238,7 @@ Service for friends
 | GetWhoFollowPeer | [.GetWhoFollowPeerIn](#GetWhoFollowPeerIn) | [.GetWhoFollowPeerOut](#GetWhoFollowPeerOut) |  |
 | RemoveSubscribe | [.RemoveSubscribeIn](#RemoveSubscribeIn) | [.RemoveSubscribeOut](#RemoveSubscribeOut) |  |
 | SetInvitePeer | [.SetInvitePeerIn](#SetInvitePeerIn) | [.SetInvitePeerOut](#SetInvitePeerOut) |  |
+| RemoveFriends | [.RemoveFriendsIn](#RemoveFriendsIn) | [.RemoveFriendsOut](#RemoveFriendsOut) |  |
 
  
 
