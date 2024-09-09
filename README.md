@@ -49,12 +49,12 @@ Request for subscription
 <a name="-GetPeerFollowOut"></a>
 
 ### GetPeerFollowOut
-Response subscription
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| subscription | [Peer](#Peer) | repeated | Result of the operation |
+| subscription | [Peer](#Peer) | repeated |  |
 
 
 
@@ -94,7 +94,7 @@ Response subscribers
 <a name="-Peer"></a>
 
 ### Peer
-Data for peer
+
 
 
 | Field | Type | Label | Description |
@@ -137,7 +137,6 @@ Data for peer
 
 
 
-
 <a name="-RemoveSubscribeIn"></a>
 
 ### RemoveSubscribeIn
@@ -167,7 +166,7 @@ Data for peer
 <a name="-SetFriendsIn"></a>
 
 ### SetFriendsIn
-Data for add peer_1 and peer_2
+
 
 
 | Field | Type | Label | Description |
@@ -180,16 +179,15 @@ Data for add peer_1 and peer_2
 
 
 
-
 <a name="-SetFriendsOut"></a>
 
 ### SetFriendsOut
-Response add friend
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| success | [bool](#bool) |  | Result of the operation |
+| success | [bool](#bool) |  |  |
 
 
 
