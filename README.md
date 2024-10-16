@@ -4,8 +4,8 @@
 ## Table of Contents
 
 - [friends.proto](#friends-proto)
-    - [GetCountSubscriIn](#-GetCountSubscriIn)
-    - [GetCountSubscriOut](#-GetCountSubscriOut)
+    - [GetCountFriendsIn](#-GetCountFriendsIn)
+    - [GetCountFriendsOut](#-GetCountFriendsOut)
     - [GetPeerFollowIn](#-GetPeerFollowIn)
     - [GetPeerFollowOut](#-GetPeerFollowOut)
     - [GetWhoFollowPeerIn](#-GetWhoFollowPeerIn)
@@ -33,19 +33,19 @@
 
 
 
-<a name="-GetCountSubscriIn"></a>
+<a name="-GetCountFriendsIn"></a>
 
-### GetCountSubscriIn
-
-
+### GetCountFriendsIn
 
 
 
 
 
-<a name="-GetCountSubscriOut"></a>
 
-### GetCountSubscriOut
+
+<a name="-GetCountFriendsOut"></a>
+
+### GetCountFriendsOut
 
 
 
@@ -267,7 +267,7 @@ Service for friends
 | RemoveSubscribe | [.RemoveSubscribeIn](#RemoveSubscribeIn) | [.RemoveSubscribeOut](#RemoveSubscribeOut) |  |
 | SetInvitePeer | [.SetInvitePeerIn](#SetInvitePeerIn) | [.SetInvitePeerOut](#SetInvitePeerOut) |  |
 | RemoveFriends | [.RemoveFriendsIn](#RemoveFriendsIn) | [.RemoveFriendsOut](#RemoveFriendsOut) |  |
-| GetCountSubscri | [.GetCountSubscriIn](#GetCountSubscriIn) | [.GetCountSubscriOut](#GetCountSubscriOut) |  |
+| GetCountFriends | [.GetCountFriendsIn](#GetCountFriendsIn) | [.GetCountFriendsOut](#GetCountFriendsOut) |  |
 
  
 

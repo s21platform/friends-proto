@@ -652,14 +652,14 @@ func (x *GetWhoFollowPeerIn) GetUuid() string {
 	return ""
 }
 
-type GetCountSubscriIn struct {
+type GetCountFriendsIn struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *GetCountSubscriIn) Reset() {
-	*x = GetCountSubscriIn{}
+func (x *GetCountFriendsIn) Reset() {
+	*x = GetCountFriendsIn{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_friends_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -667,13 +667,13 @@ func (x *GetCountSubscriIn) Reset() {
 	}
 }
 
-func (x *GetCountSubscriIn) String() string {
+func (x *GetCountFriendsIn) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetCountSubscriIn) ProtoMessage() {}
+func (*GetCountFriendsIn) ProtoMessage() {}
 
-func (x *GetCountSubscriIn) ProtoReflect() protoreflect.Message {
+func (x *GetCountFriendsIn) ProtoReflect() protoreflect.Message {
 	mi := &file_friends_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -685,12 +685,12 @@ func (x *GetCountSubscriIn) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetCountSubscriIn.ProtoReflect.Descriptor instead.
-func (*GetCountSubscriIn) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetCountFriendsIn.ProtoReflect.Descriptor instead.
+func (*GetCountFriendsIn) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{13}
 }
 
-type GetCountSubscriOut struct {
+type GetCountFriendsOut struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -699,8 +699,8 @@ type GetCountSubscriOut struct {
 	Subscribers  int64 `protobuf:"varint,2,opt,name=subscribers,proto3" json:"subscribers,omitempty"`
 }
 
-func (x *GetCountSubscriOut) Reset() {
-	*x = GetCountSubscriOut{}
+func (x *GetCountFriendsOut) Reset() {
+	*x = GetCountFriendsOut{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_friends_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -708,13 +708,13 @@ func (x *GetCountSubscriOut) Reset() {
 	}
 }
 
-func (x *GetCountSubscriOut) String() string {
+func (x *GetCountFriendsOut) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetCountSubscriOut) ProtoMessage() {}
+func (*GetCountFriendsOut) ProtoMessage() {}
 
-func (x *GetCountSubscriOut) ProtoReflect() protoreflect.Message {
+func (x *GetCountFriendsOut) ProtoReflect() protoreflect.Message {
 	mi := &file_friends_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -726,19 +726,19 @@ func (x *GetCountSubscriOut) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetCountSubscriOut.ProtoReflect.Descriptor instead.
-func (*GetCountSubscriOut) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetCountFriendsOut.ProtoReflect.Descriptor instead.
+func (*GetCountFriendsOut) Descriptor() ([]byte, []int) {
 	return file_friends_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *GetCountSubscriOut) GetSubscription() int64 {
+func (x *GetCountFriendsOut) GetSubscription() int64 {
 	if x != nil {
 		return x.Subscription
 	}
 	return 0
 }
 
-func (x *GetCountSubscriOut) GetSubscribers() int64 {
+func (x *GetCountFriendsOut) GetSubscribers() int64 {
 	if x != nil {
 		return x.Subscribers
 	}
@@ -788,9 +788,9 @@ var file_friends_proto_rawDesc = []byte{
 	0x75, 0x69, 0x64, 0x22, 0x28, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x57, 0x68, 0x6f, 0x46, 0x6f, 0x6c,
 	0x6c, 0x6f, 0x77, 0x50, 0x65, 0x65, 0x72, 0x49, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69,
 	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22, 0x13, 0x0a,
-	0x11, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
-	0x49, 0x6e, 0x22, 0x5a, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x75,
-	0x62, 0x73, 0x63, 0x72, 0x69, 0x4f, 0x75, 0x74, 0x12, 0x22, 0x0a, 0x0c, 0x73, 0x75, 0x62, 0x73,
+	0x11, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73,
+	0x49, 0x6e, 0x22, 0x5a, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x46, 0x72,
+	0x69, 0x65, 0x6e, 0x64, 0x73, 0x4f, 0x75, 0x74, 0x12, 0x22, 0x0a, 0x0c, 0x73, 0x75, 0x62, 0x73,
 	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0c,
 	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x20, 0x0a, 0x0b,
 	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28,
@@ -818,9 +818,9 @@ var file_friends_proto_rawDesc = []byte{
 	0x12, 0x10, 0x2e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73,
 	0x49, 0x6e, 0x1a, 0x11, 0x2e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x46, 0x72, 0x69, 0x65, 0x6e,
 	0x64, 0x73, 0x4f, 0x75, 0x74, 0x22, 0x00, 0x12, 0x3c, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x43, 0x6f,
-	0x75, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x12, 0x12, 0x2e, 0x47, 0x65, 0x74,
-	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x49, 0x6e, 0x1a, 0x13,
-	0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
+	0x75, 0x6e, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x12, 0x12, 0x2e, 0x47, 0x65, 0x74,
+	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x49, 0x6e, 0x1a, 0x13,
+	0x2e, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x46, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73,
 	0x4f, 0x75, 0x74, 0x22, 0x00, 0x42, 0x11, 0x5a, 0x0f, 0x2e, 0x2f, 0x66, 0x72, 0x69, 0x65, 0x6e,
 	0x64, 0x73, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
@@ -852,8 +852,8 @@ var file_friends_proto_goTypes = []any{
 	(*GetWhoFollowPeerOut)(nil), // 10: GetWhoFollowPeerOut
 	(*GetPeerFollowIn)(nil),     // 11: GetPeerFollowIn
 	(*GetWhoFollowPeerIn)(nil),  // 12: GetWhoFollowPeerIn
-	(*GetCountSubscriIn)(nil),   // 13: GetCountSubscriIn
-	(*GetCountSubscriOut)(nil),  // 14: GetCountSubscriOut
+	(*GetCountFriendsIn)(nil),   // 13: GetCountFriendsIn
+	(*GetCountFriendsOut)(nil),  // 14: GetCountFriendsOut
 }
 var file_friends_proto_depIdxs = []int32{
 	4,  // 0: GetPeerFollowOut.subscription:type_name -> Peer
@@ -864,14 +864,14 @@ var file_friends_proto_depIdxs = []int32{
 	5,  // 5: FriendsService.RemoveSubscribe:input_type -> RemoveSubscribeIn
 	7,  // 6: FriendsService.SetInvitePeer:input_type -> SetInvitePeerIn
 	0,  // 7: FriendsService.RemoveFriends:input_type -> RemoveFriendsIn
-	13, // 8: FriendsService.GetCountSubscri:input_type -> GetCountSubscriIn
+	13, // 8: FriendsService.GetCountFriends:input_type -> GetCountFriendsIn
 	3,  // 9: FriendsService.SetFriends:output_type -> SetFriendsOut
 	9,  // 10: FriendsService.GetPeerFollow:output_type -> GetPeerFollowOut
 	10, // 11: FriendsService.GetWhoFollowPeer:output_type -> GetWhoFollowPeerOut
 	6,  // 12: FriendsService.RemoveSubscribe:output_type -> RemoveSubscribeOut
 	8,  // 13: FriendsService.SetInvitePeer:output_type -> SetInvitePeerOut
 	1,  // 14: FriendsService.RemoveFriends:output_type -> RemoveFriendsOut
-	14, // 15: FriendsService.GetCountSubscri:output_type -> GetCountSubscriOut
+	14, // 15: FriendsService.GetCountFriends:output_type -> GetCountFriendsOut
 	9,  // [9:16] is the sub-list for method output_type
 	2,  // [2:9] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name
@@ -1042,7 +1042,7 @@ func file_friends_proto_init() {
 			}
 		}
 		file_friends_proto_msgTypes[13].Exporter = func(v any, i int) any {
-			switch v := v.(*GetCountSubscriIn); i {
+			switch v := v.(*GetCountFriendsIn); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1054,7 +1054,7 @@ func file_friends_proto_init() {
 			}
 		}
 		file_friends_proto_msgTypes[14].Exporter = func(v any, i int) any {
-			switch v := v.(*GetCountSubscriOut); i {
+			switch v := v.(*GetCountFriendsOut); i {
 			case 0:
 				return &v.state
 			case 1:

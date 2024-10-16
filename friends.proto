@@ -11,7 +11,7 @@ service FriendsService {
   rpc RemoveSubscribe(RemoveSubscribeIn) returns (RemoveSubscribeOut){};
   rpc SetInvitePeer(SetInvitePeerIn) returns (SetInvitePeerOut){};
   rpc RemoveFriends(RemoveFriendsIn) returns (RemoveFriendsOut){};
-  rpc GetCountSubscri(GetCountSubscriIn) returns (GetCountSubscriOut){};
+  rpc GetCountFriends(GetCountFriendsIn) returns (GetCountFriendsOut){};
 }
 
 message RemoveFriendsIn{
@@ -73,10 +73,10 @@ message GetWhoFollowPeerIn {
   string uuid = 1;
 }
 
-message GetCountSubscriIn {
+message GetCountFriendsIn {
 }
 
-message GetCountSubscriOut {
+message GetCountFriendsOut {
   int64 subscription = 1;
   int64 subscribers = 2;
 }
