@@ -4,6 +4,8 @@
 ## Table of Contents
 
 - [friends.proto](#friends-proto)
+    - [GetCountSubscriIn](#-GetCountSubscriIn)
+    - [GetCountSubscriOut](#-GetCountSubscriOut)
     - [GetPeerFollowIn](#-GetPeerFollowIn)
     - [GetPeerFollowOut](#-GetPeerFollowOut)
     - [GetWhoFollowPeerIn](#-GetWhoFollowPeerIn)
@@ -28,6 +30,32 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## friends.proto
+
+
+
+<a name="-GetCountSubscriIn"></a>
+
+### GetCountSubscriIn
+
+
+
+
+
+
+
+<a name="-GetCountSubscriOut"></a>
+
+### GetCountSubscriOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| subscription | [int64](#int64) |  |  |
+| subscribers | [int64](#int64) |  |  |
+
+
+
 
 
 
@@ -239,6 +267,7 @@ Service for friends
 | RemoveSubscribe | [.RemoveSubscribeIn](#RemoveSubscribeIn) | [.RemoveSubscribeOut](#RemoveSubscribeOut) |  |
 | SetInvitePeer | [.SetInvitePeerIn](#SetInvitePeerIn) | [.SetInvitePeerOut](#SetInvitePeerOut) |  |
 | RemoveFriends | [.RemoveFriendsIn](#RemoveFriendsIn) | [.RemoveFriendsOut](#RemoveFriendsOut) |  |
+| GetCountSubscri | [.GetCountSubscriIn](#GetCountSubscriIn) | [.GetCountSubscriOut](#GetCountSubscriOut) |  |
 
  
 
