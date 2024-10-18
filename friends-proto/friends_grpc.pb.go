@@ -41,7 +41,7 @@ type FriendsServiceClient interface {
 	RemoveSubscribe(ctx context.Context, in *RemoveSubscribeIn, opts ...grpc.CallOption) (*RemoveSubscribeOut, error)
 	SetInvitePeer(ctx context.Context, in *SetInvitePeerIn, opts ...grpc.CallOption) (*SetInvitePeerOut, error)
 	RemoveFriends(ctx context.Context, in *RemoveFriendsIn, opts ...grpc.CallOption) (*RemoveFriendsOut, error)
-	GetCountFriends(ctx context.Context, in *GetCountFriendsIn, opts ...grpc.CallOption) (*GetCountFriendsOut, error)
+	GetCountFriends(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetCountFriendsOut, error)
 }
 
 type friendsServiceClient struct {
@@ -112,7 +112,7 @@ func (c *friendsServiceClient) RemoveFriends(ctx context.Context, in *RemoveFrie
 	return out, nil
 }
 
-func (c *friendsServiceClient) GetCountFriends(ctx context.Context, in *GetCountFriendsIn, opts ...grpc.CallOption) (*GetCountFriendsOut, error) {
+func (c *friendsServiceClient) GetCountFriends(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetCountFriendsOut, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetCountFriendsOut)
 	err := c.cc.Invoke(ctx, FriendsService_GetCountFriends_FullMethodName, in, out, cOpts...)
@@ -135,7 +135,7 @@ type FriendsServiceServer interface {
 	RemoveSubscribe(context.Context, *RemoveSubscribeIn) (*RemoveSubscribeOut, error)
 	SetInvitePeer(context.Context, *SetInvitePeerIn) (*SetInvitePeerOut, error)
 	RemoveFriends(context.Context, *RemoveFriendsIn) (*RemoveFriendsOut, error)
-	GetCountFriends(context.Context, *GetCountFriendsIn) (*GetCountFriendsOut, error)
+	GetCountFriends(context.Context, *Empty) (*GetCountFriendsOut, error)
 	mustEmbedUnimplementedFriendsServiceServer()
 }
 
@@ -161,7 +161,7 @@ func (UnimplementedFriendsServiceServer) SetInvitePeer(context.Context, *SetInvi
 func (UnimplementedFriendsServiceServer) RemoveFriends(context.Context, *RemoveFriendsIn) (*RemoveFriendsOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemoveFriends not implemented")
 }
-func (UnimplementedFriendsServiceServer) GetCountFriends(context.Context, *GetCountFriendsIn) (*GetCountFriendsOut, error) {
+func (UnimplementedFriendsServiceServer) GetCountFriends(context.Context, *Empty) (*GetCountFriendsOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCountFriends not implemented")
 }
 func (UnimplementedFriendsServiceServer) mustEmbedUnimplementedFriendsServiceServer() {}
@@ -286,7 +286,7 @@ func _FriendsService_RemoveFriends_Handler(srv interface{}, ctx context.Context,
 }
 
 func _FriendsService_GetCountFriends_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCountFriendsIn)
+	in := new(Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -298,7 +298,7 @@ func _FriendsService_GetCountFriends_Handler(srv interface{}, ctx context.Contex
 		FullMethod: FriendsService_GetCountFriends_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FriendsServiceServer).GetCountFriends(ctx, req.(*GetCountFriendsIn))
+		return srv.(FriendsServiceServer).GetCountFriends(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }

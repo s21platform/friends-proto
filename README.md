@@ -4,7 +4,7 @@
 ## Table of Contents
 
 - [friends.proto](#friends-proto)
-    - [GetCountFriendsIn](#-GetCountFriendsIn)
+    - [Empty](#-Empty)
     - [GetCountFriendsOut](#-GetCountFriendsOut)
     - [GetPeerFollowIn](#-GetPeerFollowIn)
     - [GetPeerFollowOut](#-GetPeerFollowOut)
@@ -33,9 +33,9 @@
 
 
 
-<a name="-GetCountFriendsIn"></a>
+<a name="-Empty"></a>
 
-### GetCountFriendsIn
+### Empty
 
 
 
@@ -267,7 +267,7 @@ Service for friends
 | RemoveSubscribe | [.RemoveSubscribeIn](#RemoveSubscribeIn) | [.RemoveSubscribeOut](#RemoveSubscribeOut) |  |
 | SetInvitePeer | [.SetInvitePeerIn](#SetInvitePeerIn) | [.SetInvitePeerOut](#SetInvitePeerOut) |  |
 | RemoveFriends | [.RemoveFriendsIn](#RemoveFriendsIn) | [.RemoveFriendsOut](#RemoveFriendsOut) |  |
-| GetCountFriends | [.GetCountFriendsIn](#GetCountFriendsIn) | [.GetCountFriendsOut](#GetCountFriendsOut) |  |
+| GetCountFriends | [.Empty](#Empty) | [.GetCountFriendsOut](#GetCountFriendsOut) |  |
 
  
 
