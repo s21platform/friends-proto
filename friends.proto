@@ -11,10 +11,10 @@ service FriendsService {
   rpc RemoveSubscribe(RemoveSubscribeIn) returns (RemoveSubscribeOut){};
   rpc SetInvitePeer(SetInvitePeerIn) returns (SetInvitePeerOut){};
   rpc RemoveFriends(RemoveFriendsIn) returns (RemoveFriendsOut){};
-  rpc GetCountFriends(Empty) returns (GetCountFriendsOut){};
+  rpc GetCountFriends(EmptyFriends) returns (GetCountFriendsOut){};
 }
 
-message Empty {}
+message EmptyFriends {}
 
 message RemoveFriendsIn{
   string peer_1 = 1;
