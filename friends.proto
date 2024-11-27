@@ -17,8 +17,7 @@ service FriendsService {
 message EmptyFriends {}
 
 message RemoveFriendsIn{
-  string peer_1 = 1;
-  string peer_2 = 2;
+  string peer = 1;
 }
 
 message RemoveFriendsOut{
@@ -26,8 +25,7 @@ message RemoveFriendsOut{
 }
 
 message SetFriendsIn {
-  string peer_1 = 1;
-  string peer_2 = 2;
+  string peer = 2;
 }
 
 message SetFriendsOut {
@@ -40,16 +38,14 @@ message Peer {
 }
 
 message RemoveSubscribeIn {
-    string peer_1 = 1;
-    string peer_2 = 2;
+    string peer = 1;
 }
 
 message RemoveSubscribeOut{
 }
 
 message SetInvitePeerIn{
-    string uuid = 1;
-    string email = 2;
+    string email = 1;
 }
 
 message SetInvitePeerOut{
