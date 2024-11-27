@@ -25,7 +25,7 @@ message RemoveFriendsOut{
 }
 
 message SetFriendsIn {
-  string peer = 2;
+  string peer = 1;
 }
 
 message SetFriendsOut {
