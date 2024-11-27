@@ -142,8 +142,7 @@ Response subscribers
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| peer_1 | [string](#string) |  |  |
-| peer_2 | [string](#string) |  |  |
+| peer | [string](#string) |  |  |
 
 
 
@@ -173,8 +172,7 @@ Response subscribers
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| peer_1 | [string](#string) |  |  |
-| peer_2 | [string](#string) |  |  |
+| peer | [string](#string) |  |  |
 
 
 
@@ -199,8 +197,7 @@ Response subscribers
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| peer_1 | [string](#string) |  |  |
-| peer_2 | [string](#string) |  |  |
+| peer | [string](#string) |  |  |
 
 
 
@@ -230,7 +227,6 @@ Response subscribers
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| uuid | [string](#string) |  |  |
 | email | [string](#string) |  |  |
 
 
