@@ -12,6 +12,7 @@ service FriendsService {
   rpc SetInvitePeer(SetInvitePeerIn) returns (SetInvitePeerOut){};
   rpc RemoveFriends(RemoveFriendsIn) returns (RemoveFriendsOut){};
   rpc GetCountFriends(EmptyFriends) returns (GetCountFriendsOut){};
+  rpc IsFriendExist (IsFriendExistIn) returns (IsFriendExistOut){};
 }
 
 message EmptyFriends {}
@@ -74,4 +75,12 @@ message GetWhoFollowPeerIn {
 message GetCountFriendsOut {
   int64 subscription = 1;
   int64 subscribers = 2;
+}
+
+message IsFriendExistIn {
+  string peer = 1;
+}
+
+message IsFriendExistOut {
+  bool success = 1;
 }

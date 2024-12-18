@@ -10,6 +10,8 @@
     - [GetPeerFollowOut](#-GetPeerFollowOut)
     - [GetWhoFollowPeerIn](#-GetWhoFollowPeerIn)
     - [GetWhoFollowPeerOut](#-GetWhoFollowPeerOut)
+    - [IsFriendExistIn](#-IsFriendExistIn)
+    - [IsFriendExistOut](#-IsFriendExistOut)
     - [Peer](#-Peer)
     - [RemoveFriendsIn](#-RemoveFriendsIn)
     - [RemoveFriendsOut](#-RemoveFriendsOut)
@@ -113,6 +115,36 @@ Response subscribers
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | subscribers | [Peer](#Peer) | repeated | Result of the operation |
+
+
+
+
+
+
+<a name="-IsFriendExistIn"></a>
+
+### IsFriendExistIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| peer | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-IsFriendExistOut"></a>
+
+### IsFriendExistOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  |  |
 
 
 
@@ -264,6 +296,7 @@ Service for friends
 | SetInvitePeer | [.SetInvitePeerIn](#SetInvitePeerIn) | [.SetInvitePeerOut](#SetInvitePeerOut) |  |
 | RemoveFriends | [.RemoveFriendsIn](#RemoveFriendsIn) | [.RemoveFriendsOut](#RemoveFriendsOut) |  |
 | GetCountFriends | [.EmptyFriends](#EmptyFriends) | [.GetCountFriendsOut](#GetCountFriendsOut) |  |
+| IsFriendExist | [.IsFriendExistIn](#IsFriendExistIn) | [.IsFriendExistOut](#IsFriendExistOut) |  |
 
  
 
