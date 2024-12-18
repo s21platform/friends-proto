@@ -30,6 +30,7 @@ type FriendsServiceClient interface {
 	SetInvitePeer(ctx context.Context, in *SetInvitePeerIn, opts ...grpc.CallOption) (*SetInvitePeerOut, error)
 	RemoveFriends(ctx context.Context, in *RemoveFriendsIn, opts ...grpc.CallOption) (*RemoveFriendsOut, error)
 	GetCountFriends(ctx context.Context, in *EmptyFriends, opts ...grpc.CallOption) (*GetCountFriendsOut, error)
+	IsFriendExist(ctx context.Context, in *IsFriendExistIn, opts ...grpc.CallOption) (*IsFriendExistOut, error)
 }
 
 type friendsServiceClient struct {
@@ -103,6 +104,15 @@ func (c *friendsServiceClient) GetCountFriends(ctx context.Context, in *EmptyFri
 	return out, nil
 }
 
+func (c *friendsServiceClient) IsFriendExist(ctx context.Context, in *IsFriendExistIn, opts ...grpc.CallOption) (*IsFriendExistOut, error) {
+	out := new(IsFriendExistOut)
+	err := c.cc.Invoke(ctx, "/FriendsService/IsFriendExist", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FriendsServiceServer is the server API for FriendsService service.
 // All implementations must embed UnimplementedFriendsServiceServer
 // for forward compatibility
@@ -115,6 +125,7 @@ type FriendsServiceServer interface {
 	SetInvitePeer(context.Context, *SetInvitePeerIn) (*SetInvitePeerOut, error)
 	RemoveFriends(context.Context, *RemoveFriendsIn) (*RemoveFriendsOut, error)
 	GetCountFriends(context.Context, *EmptyFriends) (*GetCountFriendsOut, error)
+	IsFriendExist(context.Context, *IsFriendExistIn) (*IsFriendExistOut, error)
 	mustEmbedUnimplementedFriendsServiceServer()
 }
 
@@ -142,6 +153,9 @@ func (UnimplementedFriendsServiceServer) RemoveFriends(context.Context, *RemoveF
 }
 func (UnimplementedFriendsServiceServer) GetCountFriends(context.Context, *EmptyFriends) (*GetCountFriendsOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCountFriends not implemented")
+}
+func (UnimplementedFriendsServiceServer) IsFriendExist(context.Context, *IsFriendExistIn) (*IsFriendExistOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IsFriendExist not implemented")
 }
 func (UnimplementedFriendsServiceServer) mustEmbedUnimplementedFriendsServiceServer() {}
 
@@ -282,6 +296,24 @@ func _FriendsService_GetCountFriends_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FriendsService_IsFriendExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IsFriendExistIn)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FriendsServiceServer).IsFriendExist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/FriendsService/IsFriendExist",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FriendsServiceServer).IsFriendExist(ctx, req.(*IsFriendExistIn))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // FriendsService_ServiceDesc is the grpc.ServiceDesc for FriendsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -316,6 +348,10 @@ var FriendsService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCountFriends",
 			Handler:    _FriendsService_GetCountFriends_Handler,
+		},
+		{
+			MethodName: "IsFriendExist",
+			Handler:    _FriendsService_IsFriendExist_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
